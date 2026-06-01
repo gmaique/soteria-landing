@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Soteria — Segurança do Trabalho | Curitiba</title>
+<meta name="description" content="Laudos de Insalubridade, Periculosidade, LTCAT e PGR com ART em Curitiba e Região Metropolitana. Conformidade total com o e-Social SST." />
+
+<!-- ====== FONTES (industrial-editorial) ====== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#121417;          /* base escura industrial */
+  --ink-2:#1b1e23;
+  --ink-3:#23272e;
+  --paper:#f4f1ea;        /* off-white quente */
+  --hazard:#ffb200;       /* amarelo de segurança */
+  --hazard-deep:#e89400;
+  --signal:#ff5630;       /* alerta */
+  --line:rgba(244,241,234,.12);
+  --muted:rgba(244,241,234,.62);
+  --display:"Archivo Black", sans-serif;
+  --head:"Archivo", sans-serif;
+  --body:"IBM Plex Sans", sans-serif;
+  --mono:"IBM Plex Mono", monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--body);
+  font-weight:300;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* textura de grão sutil */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+
+/* faixa de perigo (hazard tape) */
+.hazard-tape{
+  height:14px;
+  background:repeating-linear-gradient(45deg,var(--hazard) 0 22px,var(--ink) 22px 44px);
+  position:relative;z-index:2;
+}
+
+/* ============ HEADER ============ */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(18,20,23,.82);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .mark{
+  width:42px;height:42px;flex:none;border-radius:9px;
+  background:var(--hazard);color:var(--ink);
+  display:grid;place-items:center;font-family:var(--display);font-size:20px;
+  box-shadow:0 0 0 4px rgba(255,178,0,.15);
+}
+.brand b{font-family:var(--head);font-weight:800;letter-spacing:-.02em;font-size:1.02rem;display:block;line-height:1.1}
+.brand span{font-family:var(--mono);font-size:.66rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.nav-cta{display:flex;align-items:center;gap:18px}
+.nav-links{display:flex;gap:26px;font-size:.86rem;font-weight:400}
+.nav-links a{color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--paper)}
+.btn{
+  font-family:var(--head);font-weight:700;font-size:.86rem;
+  padding:13px 22px;border-radius:10px;cursor:pointer;border:none;
+  display:inline-flex;align-items:center;gap:9px;transition:transform .15s, box-shadow .2s, background .2s;
+  letter-spacing:.01em;
+}
+.btn-wa{background:var(--hazard);color:var(--ink);box-shadow:0 6px 24px rgba(255,178,0,.28)}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,178,0,.4)}
+.btn-ghost{background:transparent;color:var(--paper);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--hazard);color:var(--hazard)}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:92px 0 80px;overflow:hidden}
+.hero::after{ /* halo radial */
+  content:"";position:absolute;top:-30%;right:-15%;width:760px;height:760px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,178,0,.16),transparent 62%);pointer-events:none;
+}
+.kicker{
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--hazard);display:inline-flex;align-items:center;gap:12px;margin-bottom:26px;
+}
+.kicker::before{content:"";width:38px;height:2px;background:var(--hazard)}
+h1{
+  font-family:var(--display);
+  font-size:clamp(2.6rem,6.4vw,5.1rem);
+  line-height:.96;letter-spacing:-.025em;text-transform:uppercase;
+  max-width:14ch;
+}
+h1 .hl{color:var(--hazard)}
+.hero p.sub{
+  font-size:clamp(1.05rem,1.7vw,1.28rem);color:var(--muted);font-weight:300;
+  max-width:52ch;margin:28px 0 38px;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.trust-row{display:flex;flex-wrap:wrap;gap:26px;margin-top:46px;padding-top:30px;border-top:1px solid var(--line)}
+.trust-row div{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.trust-row b{display:block;font-family:var(--head);font-weight:800;font-size:1.5rem;color:var(--paper);letter-spacing:-.02em}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+[data-d="1"]{transition-delay:.08s}[data-d="2"]{transition-delay:.16s}[data-d="3"]{transition-delay:.24s}[data-d="4"]{transition-delay:.32s}
+
+/* ============ SECTION HEADINGS ============ */
+section{position:relative;z-index:2}
+.sec-pad{padding:96px 0}
+.sec-tag{font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--hazard);margin-bottom:16px}
+.sec-title{font-family:var(--head);font-weight:800;font-size:clamp(1.9rem,3.8vw,3rem);letter-spacing:-.025em;line-height:1.03;max-width:18ch}
+
+/* ============ DORES ============ */
+.pain{background:var(--ink-2)}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:48px;border:1px solid var(--line)}
+.pain-card{background:var(--ink-2);padding:38px 32px}
+.pain-card .ix{font-family:var(--display);color:var(--signal);font-size:1.4rem;margin-bottom:18px}
+.pain-card h3{font-family:var(--head);font-weight:700;font-size:1.12rem;margin-bottom:10px}
+.pain-card p{color:var(--muted);font-size:.95rem}
+
+/* ============ SERVIÇOS ============ */
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:50px}
+.serv{
+  background:linear-gradient(160deg,var(--ink-3),var(--ink-2));
+  border:1px solid var(--line);border-radius:16px;padding:34px 30px;position:relative;overflow:hidden;
+  transition:transform .25s, border-color .25s;
+}
+.serv::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--hazard);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.serv:hover{transform:translateY(-4px);border-color:rgba(255,178,0,.4)}
+.serv:hover::before{transform:scaleX(1)}
+.serv .num{font-family:var(--mono);font-size:.72rem;color:var(--hazard);letter-spacing:.1em}
+.serv h3{font-family:var(--head);font-weight:800;font-size:1.45rem;margin:14px 0 12px;letter-spacing:-.02em}
+.serv p{color:var(--muted);font-size:.95rem}
+.serv .tag{display:inline-block;margin-top:18px;font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--paper);background:rgba(255,178,0,.12);border:1px solid rgba(255,178,0,.3);padding:5px 11px;border-radius:6px}
+.serv.exclusive .tag{color:var(--ink);background:var(--hazard);border-color:var(--hazard)}
+
+/* ============ AUTORIDADE ============ */
+.auth{background:var(--ink-2);position:relative}
+.auth-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.auth ul{list-style:none;margin-top:30px;display:grid;gap:16px}
+.auth li{display:flex;gap:14px;align-items:flex-start;font-size:1rem}
+.auth li .ck{flex:none;width:26px;height:26px;border-radius:7px;background:var(--hazard);color:var(--ink);display:grid;place-items:center;font-weight:900;font-family:var(--head);font-size:.85rem}
+.cred-card{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:36px;position:relative;overflow:hidden}
+.cred-card::after{content:"";position:absolute;bottom:-40px;right:-40px;width:160px;height:160px;background:repeating-linear-gradient(45deg,rgba(255,178,0,.12) 0 12px,transparent 12px 24px);border-radius:50%}
+.cred-card .reg{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.85rem}
+.cred-card .reg:last-child{border:0}
+.cred-card .reg span{color:var(--muted)}
+.cred-card .reg b{color:var(--hazard)}
+
+/* ============ PROCESSO ============ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px;counter-reset:s}
+.step{padding:30px 24px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--display);font-size:2.6rem;color:rgba(255,178,0,.22);display:block;margin-bottom:12px;line-height:1}
+.step h4{font-family:var(--head);font-weight:700;font-size:1.05rem;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.9rem}
+
+/* ============ FORM ============ */
+.form-sec{background:linear-gradient(180deg,var(--ink),var(--ink-2))}
+.form-card{
+  background:var(--ink-2);border:1px solid var(--line);border-radius:22px;
+  padding:54px;display:grid;grid-template-columns:1fr 1fr;gap:48px;position:relative;overflow:hidden;
+}
+.form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(45deg,var(--hazard) 0 18px,var(--ink) 18px 36px)}
+.form-card h2{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.4rem);text-transform:uppercase;letter-spacing:-.02em;line-height:1}
+.form-card .lead-copy p{color:var(--muted);margin-top:18px}
+.form-card .lead-copy .resp{margin-top:28px;font-family:var(--mono);font-size:.8rem;color:var(--hazard)}
+form{display:grid;gap:16px}
+label{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:7px}
+input,select{
+  width:100%;background:var(--ink);border:1px solid var(--line);border-radius:10px;
+  padding:14px 16px;color:var(--paper);font-family:var(--body);font-size:1rem;transition:border-color .2s,box-shadow .2s;
+}
+input:focus,select:focus{outline:none;border-color:var(--hazard);box-shadow:0 0 0 3px rgba(255,178,0,.16)}
+.form-card .btn-wa{width:100%;justify-content:center;margin-top:6px;font-size:1rem;padding:16px}
+.priv{font-size:.74rem;color:var(--muted);text-align:center}
+
+/* ============ FOOTER ============ */
+footer{background:var(--ink);border-top:1px solid var(--line);padding:54px 0 40px;font-size:.86rem;color:var(--muted)}
+.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px}
+footer b{color:var(--paper);font-family:var(--head)}
+.disclaimer{margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-size:.74rem;line-height:1.7}
+
+/* ============ FLOATING WHATSAPP ============ */
+.fab{position:fixed;bottom:26px;right:26px;z-index:60;background:#25D366;color:#0b3d23;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45);transition:transform .2s;font-weight:900}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:32px;height:32px}
+
+/* ============ RESPONSIVO ============ */
+@media(max-width:860px){
+  .nav-links{display:none}
+  .pain-grid,.serv-grid,.steps,.auth-grid,.form-card{grid-template-columns:1fr}
+  .steps{gap:14px}
+  .form-card{padding:34px 26px}
+  .hero{padding:64px 0 56px}
+}
+</style>
+</head>
+<body>
+
+<div class="hazard-tape"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="mark"><svg viewBox="0 0 100 100" style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" aria-label="Soteria"><circle cx="50" cy="50" r="48" fill="#1fa84f"/><g fill="#fff"><rect x="44" y="20" width="12" height="60" rx="2"/><rect x="20" y="44" width="60" height="12" rx="2"/></g><g transform="translate(50,53) scale(0.44) translate(-50,-50)"><path d="M25 60 C25 39 36 29 50 29 C64 29 75 39 75 60 Z" fill="#ffb200"/><rect x="15" y="60" width="70" height="9" rx="4.5" fill="#ffb200"/><rect x="46" y="22" width="8" height="9" rx="2.5" fill="#ffb200"/><g stroke="#e89400" stroke-width="3.6" stroke-linecap="round"><line x1="50" y1="32" x2="50" y2="58"/><line x1="38" y1="37" x2="38" y2="58"/><line x1="62" y1="37" x2="62" y2="58"/></g></g></svg></div>
+      <div>
+        <b>SOTERIA</b>
+        <span>Segurança do Trabalho · Resp. Téc. Ginmaique dos Reis · CREA-PR 208582/D</span>
+      </div>
+    </div>
+    <div class="nav-cta">
+      <nav class="nav-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#autoridade">Quem sou</a>
+        <a href="#processo">Como funciona</a>
+        <a href="precos.html">Preços</a>
+      </nav>
+      <a class="btn btn-wa" href="#orcamento">Pedir orçamento</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker reveal">Curitiba · Região Metropolitana · Paraná</div>
+    <h1 class="reveal" data-d="1">Sua empresa <span class="hl">protegida</span> e em dia com o e-Social.</h1>
+    <p class="sub reveal" data-d="2">Laudos de <strong>Insalubridade</strong>, <strong>Periculosidade</strong>, <strong>LTCAT</strong> e <strong>PGR</strong> com ART — assinados por Engenheiro de Segurança do Trabalho. Sem multa, sem passivo trabalhista, sem dor de cabeça.</p>
+    <div class="hero-cta reveal" data-d="3">
+      <a class="btn btn-wa" href="#" id="heroWa">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+        Falar agora no WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+    </div>
+    <div class="trust-row reveal" data-d="4">
+      <div><b>CLT 195</b>Laudos com validade legal</div>
+      <div><b>+ART</b>Em toda entrega técnica</div>
+      <div><b>MTE</b>Perito habilitado</div>
+      <div><b>24h</b>Retorno do orçamento</div>
+    </div>
+  </div>
+</section>
+
+<div class="hazard-tape"></div>
+
+<!-- DORES -->
+<section class="sec-pad pain" id="dores">
+  <div class="wrap">
+    <div class="sec-tag reveal">O que está em jogo</div>
+    <h2 class="sec-title reveal">Documento de SST faltando ou vencido custa caro.</h2>
+    <div class="pain-grid">
+      <div class="pain-card reveal" data-d="1">
+        <div class="ix">!</div>
+        <h3>Multas do e-Social</h3>
+        <p>Eventos S-2240 sem PGR/LTCAT atualizado expõem a empresa a autuações e penalidades trabalhistas.</p>
+      </div>
+      <div class="pain-card reveal" data-d="2">
+        <div class="ix">!</div>
+        <h3>Adicionais errados</h3>
+        <p>Insalubridade ou periculosidade paga a mais (prejuízo) ou a menos (passivo na Justiça do Trabalho).</p>
+      </div>
+      <div class="pain-card reveal" data-d="3">
+        <div class="ix">!</div>
+        <h3>Processo trabalhista</h3>
+        <p>Sem laudo técnico bem fundamentado, a empresa perde a discussão pericial e é condenada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="sec-pad" id="servicos">
+  <div class="wrap">
+    <div class="sec-tag reveal">Serviços</div>
+    <h2 class="sec-title reveal">Tudo que sua empresa precisa em SST — com responsabilidade técnica.</h2>
+    <div class="serv-grid">
+      <div class="serv exclusive reveal" data-d="1">
+        <div class="num">/ 01</div>
+        <h3>Laudo de Insalubridade</h3>
+        <p>Caracterização e classificação conforme NR-15 e CLT art. 195. Define o grau (10/20/40%) com base em medições.</p>
+        <span class="tag">Exclusivo Eng. Segurança</span>
+      </div>
+      <div class="serv exclusive reveal" data-d="2">
+        <div class="num">/ 02</div>
+        <h3>Laudo de Periculosidade</h3>
+        <p>Enquadramento na NR-16 (inflamáveis, eletricidade, segurança, motocicleta) para o adicional de 30%.</p>
+        <span class="tag">Exclusivo Eng. Segurança</span>
+      </div>
+      <div class="serv reveal" data-d="1">
+        <div class="num">/ 03</div>
+        <h3>LTCAT</h3>
+        <p>Laudo das condições ambientais para aposentadoria especial e preenchimento correto do PPP.</p>
+        <span class="tag">Previdenciário</span>
+      </div>
+      <div class="serv reveal" data-d="2">
+        <div class="num">/ 04</div>
+        <h3>PGR — NR-1</h3>
+        <p>Inventário de Riscos e Plano de Ação que substituem o antigo PPRA e atendem ao e-Social SST.</p>
+        <span class="tag">Recorrente</span>
+      </div>
+      <div class="serv exclusive reveal" data-d="1">
+        <div class="num">/ 05</div>
+        <h3>Perícia & Assistência Técnica</h3>
+        <p>Atuação como perito e assistente técnico em reclamatórias de insalubridade e periculosidade no TRT.</p>
+        <span class="tag">Judicial</span>
+      </div>
+      <div class="serv reveal" data-d="2">
+        <div class="num">/ 06</div>
+        <h3>Ergonomia & Treinamentos</h3>
+        <p>AET (NR-17), Ordem de Serviço, CIPA (NR-5) e treinamentos de NR para sua equipe.</p>
+        <span class="tag">Complementar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hazard-tape"></div>
+
+<!-- AUTORIDADE -->
+<section class="sec-pad auth" id="autoridade">
+  <div class="wrap auth-grid">
+    <div>
+      <div class="sec-tag reveal">Por que comigo</div>
+      <h2 class="sec-title reveal">Habilitação que técnico de segurança não tem.</h2>
+      <ul>
+        <li class="reveal" data-d="1"><span class="ck">✓</span> Engenheiro de Segurança do Trabalho registrado no <strong>CREA-PR</strong> e no <strong>MTE</strong>.</li>
+        <li class="reveal" data-d="2"><span class="ck">✓</span> Laudos de insalubridade e periculosidade que <strong>só engenheiro ou médico do trabalho</strong> podem assinar (CLT 195).</li>
+        <li class="reveal" data-d="3"><span class="ck">✓</span> Toda entrega acompanhada de <strong>ART</strong> — validade legal garantida.</li>
+        <li class="reveal" data-d="4"><span class="ck">✓</span> Atendimento ágil em <strong>Curitiba e RMC</strong>, com retorno em até 24h.</li>
+      </ul>
+    </div>
+    <div class="cred-card reveal" data-d="2">
+      <div class="reg"><span>Registro CREA-PR</span><b>208582/D</b></div>
+      <div class="reg"><span>Registro MTE</span><b>{{MTE}}</b></div>
+      <div class="reg"><span>Base legal</span><b>CLT Art. 195</b></div>
+      <div class="reg"><span>Atuação</span><b>Curitiba + RMC</b></div>
+      <div class="reg"><span>Responsável técnico</span><b>Ginmaique dos Reis</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="sec-pad" id="processo">
+  <div class="wrap">
+    <div class="sec-tag reveal">Como funciona</div>
+    <h2 class="sec-title reveal">Do primeiro contato ao laudo na sua mão.</h2>
+    <div class="steps">
+      <div class="step reveal" data-d="1"><h4>Contato</h4><p>Você fala comigo pelo WhatsApp ou formulário. Entendo a necessidade.</p></div>
+      <div class="step reveal" data-d="2"><h4>Orçamento</h4><p>Proposta clara em até 24h, com escopo, prazo e ART inclusa.</p></div>
+      <div class="step reveal" data-d="3"><h4>Visita técnica</h4><p>Avaliação e medições no local com equipamentos calibrados.</p></div>
+      <div class="step reveal" data-d="4"><h4>Laudo + ART</h4><p>Documento assinado, pronto pro e-Social e para a fiscalização.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM / ORÇAMENTO -->
+<section class="sec-pad form-sec" id="orcamento">
+  <div class="wrap">
+    <div class="form-card reveal">
+      <div class="lead-copy">
+        <h2>Peça seu orçamento</h2>
+        <div class="lead-copy">
+          <p>Preencha os campos e seu pedido vai direto pro meu WhatsApp já organizado. Respondo rápido, com proposta clara e sem compromisso.</p>
+          <p class="resp">⏱ Retorno em até 24h úteis.</p>
+        </div>
+      </div>
+      <form id="leadForm">
+        <div>
+          <label for="nome">Seu nome</label>
+          <input id="nome" name="nome" required placeholder="Ex.: João da Silva" />
+        </div>
+        <div>
+          <label for="empresa">Empresa</label>
+          <input id="empresa" name="empresa" required placeholder="Razão social ou nome fantasia" />
+        </div>
+        <div>
+          <label for="func">Nº de funcionários CLT</label>
+          <select id="func" name="func" required>
+            <option value="">Selecione</option>
+            <option>1 a 10</option><option>11 a 50</option>
+            <option>51 a 100</option><option>Mais de 100</option>
+          </select>
+        </div>
+        <div>
+          <label for="servico">Do que você precisa?</label>
+          <select id="servico" name="servico" required>
+            <option value="">Selecione</option>
+            <option>Insalubridade / Periculosidade</option>
+            <option>LTCAT / Aposentadoria especial</option>
+            <option>PGR (NR-1) / e-Social</option>
+            <option>Perícia trabalhista (processo)</option>
+            <option>Não sei, preciso de orientação</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-wa">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+          Enviar pelo WhatsApp
+        </button>
+        <p class="priv">Seus dados são usados só para o atendimento (LGPD).</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <b>SOTERIA</b> — Segurança do Trabalho<br>
+        Resp. Técnico: Eng. Ginmaique dos Reis · CREA-PR 208582/D · Registro MTE {{MTE}}
+      </div>
+      <div>
+        WhatsApp / Tel: (41) 98505-8491<br>
+        E-mail: {{EMAIL}}<br>
+        Curitiba e Região Metropolitana — PR
+      </div>
+    </div>
+    <p class="disclaimer">
+      Serviços de engenharia de segurança do trabalho prestados sob responsabilidade técnica do profissional registrado no CREA-PR, com emissão de ART.
+      Este site tem caráter informativo; os resultados de cada laudo dependem da avaliação técnica das condições reais de cada ambiente de trabalho.
+      © SOTERIA Segurança do Trabalho — Resp. Téc. Eng. Ginmaique dos Reis, CREA-PR 208582/D. Todos os direitos reservados.
+    </p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="fab" id="fabWa" href="#" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+/* === CONFIGURE AQUI === */
+const WHATS = "5541985058491"; // ex.: 5541999998888 (só números, com 55 e DDD)
+
+/* monta link wa.me com mensagem */
+function waLink(msg){ return `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`; }
+
+const heroMsg = "Olá! Vim pelo site e gostaria de um orçamento de SST (laudo / PGR / perícia).";
+document.getElementById('heroWa').href = waLink(heroMsg);
+document.getElementById('fabWa').href = waLink(heroMsg);
+
+/* formulário → WhatsApp com dados organizados */
+document.getElementById('leadForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const d = new FormData(this);
+  const msg =
+`*Novo orçamento pelo site*
+• Nome: ${d.get('nome')}
+• Empresa: ${d.get('empresa')}
+• Funcionários CLT: ${d.get('func')}
+• Necessidade: ${d.get('servico')}`;
+  window.open(waLink(msg), '_blank');
+});
+
+/* reveal on scroll */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+},{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
