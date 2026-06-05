@@ -188,6 +188,7 @@ footer b{color:var(--paper)}
           <input type="text" id="cEmpresa" placeholder="Nome da empresa" required>
           <input type="tel" id="cZap" placeholder="Seu WhatsApp — (41) 9...." required>
           <button type="submit" class="btn btn-wa">Receber meu plano no WhatsApp →</button>
+          <p style="font-size:.68rem;color:var(--muted);margin-top:4px">Usamos seus dados só pra este contato comercial (controladora: Soteria). <a href="privacidade.html" style="text-decoration:underline">Política de Privacidade</a>.</p>
         </form>
       </div>
       <div class="refazer"><button onclick="app.reset()">↻ refazer o diagnóstico</button></div>
@@ -213,25 +214,25 @@ const CARACTERIZACAO = [
 
 const PERGUNTAS = [
   { id:"D1", peso:20, nr:"NR-1",      titulo:"O PGR está elaborado e atualizado (últimos 2 anos)?",
-    why:"É o documento-base do gerenciamento de riscos. Sem ele, quase tudo está irregular.", cond:null },
+    why:"Documento-base da NR-1. ME/EPP de risco baixo sem exposição pode ter dispensa: se você emitiu a declaração no gov.br, responda 'Sim, em dia'.", cond:null },
   { id:"D2", peso:15, nr:"NR-7",      titulo:"PCMSO e ASOs (exames) estão em dia?",
-    why:"Admissional, periódico e demissional — alimentam o evento S-2220 do eSocial.", cond:null },
+    why:"Exames admissional, periódico e demissional — alimentam o S-2220. (A dispensa de ELABORAR o PCMSO em ME/EPP de baixo risco não dispensa os exames.)", cond:null },
   { id:"D3", peso:8,  nr:"NR-1",      titulo:"A Ordem de Serviço de segurança foi entregue aos funcionários?",
     why:"Cada empregado precisa ser formalmente informado dos riscos da função.", cond:null },
   { id:"D4", peso:12, nr:"Lei 8.213", titulo:"O LTCAT está atualizado?",
     why:"Define a aposentadoria especial e sustenta o S-2240 do eSocial.", cond:"C3" },
   { id:"D5", peso:15, nr:"NR-15/16",  titulo:"Há laudo de insalubridade/periculosidade?",
-    why:"Define (ou afasta) adicionais de 10/20/40% ou 30% — passivo de 5 anos retroativos.", cond:"C3" },
+    why:"Define (ou afasta) adicionais de 10/20/40% ou 30% — passivo de até 5 anos, observada a prescrição de 2 anos após o fim do contrato.", cond:"C3" },
   { id:"D6", peso:8,  nr:"NR-5",      titulo:"A CIPA está constituída (ou há designado treinado)?",
-    why:"Até 19 empregados basta 1 designado com treinamento — mas precisa existir.", cond:null },
+    why:"O dimensionamento depende do nº de empregados E do grau de risco (NR-5, Quadro I): risco alto exige CIPA eleita a partir de 20; risco baixo, designado treinado.", cond:null },
   { id:"D7", peso:10, nr:"várias",    titulo:"Os treinamentos de NR estão em dia?",
     why:"Admissional e periódicos (NR-35, NR-10, NR-12... conforme a função).", cond:null },
   { id:"D8", peso:7,  nr:"NR-6",      titulo:"EPIs têm CA válido e ficha de entrega assinada?",
-    why:"Sem a ficha assinada, o EPI 'não existe' numa ação trabalhista.", cond:null },
+    why:"Ficha assinada + CA válido + fiscalização do uso documentada — sem o conjunto, o EPI não sustenta a defesa (Súm. 80/289 TST).", cond:null },
   { id:"D9", peso:10, nr:"eSocial",   titulo:"Os eventos de SST do eSocial estão sendo enviados?",
     why:"S-2210 (CAT), S-2220 (saúde) e S-2240 (agentes nocivos) — o governo cruza tudo.", cond:null },
   { id:"D10",peso:5,  nr:"NR-1",      titulo:"Existe procedimento para emitir CAT em caso de acidente?",
-    why:"Prazo legal: 1 dia útil (imediato em óbito). Multa por acidente não comunicado.", cond:null },
+    why:"Prazo: até o 1º dia útil seguinte à ocorrência (imediato em óbito). Multa por acidente não comunicado.", cond:null },
 ];
 
 const RESPOSTAS = [
