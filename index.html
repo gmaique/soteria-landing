@@ -48,7 +48,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdro
 .brand span em{font-style:normal}
 .nav-cta{display:flex;align-items:center;gap:8px}
 .nav-links{display:flex;font-size:.875rem;font-weight:400}
-.nav-links a{color:var(--text-2);padding:10px 14px;transition:background .11s,color .11s}
+.nav-links a{color:var(--text-2);padding:10px 12px;transition:background .11s,color .11s;white-space:nowrap}
 .nav-links a:hover{background:var(--layer);color:var(--text)}
 
 /* Botões Carbon */
@@ -164,8 +164,39 @@ footer b{color:var(--text);font-weight:600}
 .diag-card .btn-wa{flex-shrink:0}
 .diag-free{font-family:var(--mono);font-size:.66rem;color:var(--green);margin-top:10px;display:block}
 
+/* ============ PLATAFORMA (telas do ERP) ============ */
+.plat{background:var(--layer)}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.shot{background:var(--bg);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
+.shot img{display:block;width:100%}
+.shot figcaption{font-family:var(--mono);font-size:.7rem;color:var(--helper);padding:10px 14px;border-top:1px solid var(--border);margin-top:auto}
+.shot img{aspect-ratio:3/2;object-fit:cover;object-position:top left}
+.plat-feats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:14px}
+.plat-feats div{background:var(--bg);padding:16px 18px;font-size:.85rem;color:var(--text-2)}
+.plat-feats b{display:block;color:var(--text);font-weight:600;margin-bottom:3px;font-size:.9rem}
+.plat-cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.plat-note{font-family:var(--mono);font-size:.68rem;color:var(--helper);margin-top:12px}
+
+/* ============ PARCEIROS / AFILIADOS ============ */
+.parc-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:start;margin-top:36px}
+.parc-grid ul{list-style:none;display:grid;gap:14px}
+.parc-grid li{position:relative;padding-left:34px;font-size:.95rem;font-weight:300;color:var(--text-2);line-height:1.55}
+.parc-grid li::before{content:"✓";position:absolute;left:0;top:0;width:22px;height:22px;border:1px solid var(--green);color:var(--green);display:grid;place-items:center;font-weight:600;font-size:.78rem}
+.parc-grid li strong{font-weight:500;color:var(--text)}
+.parc-como{background:var(--layer);border-left:4px solid var(--accent);padding:26px 28px}
+.parc-como h3{font-weight:600;font-size:1rem}
+.parc-como ol{list-style:none;counter-reset:p;display:grid;gap:14px;margin-top:16px}
+.parc-como ol li{counter-increment:p;position:relative;padding-left:36px;font-size:.88rem;color:var(--text-2)}
+.parc-como ol li::before{content:"0" counter(p);position:absolute;left:0;top:1px;font-family:var(--mono);font-size:.74rem;color:var(--accent)}
+
 /* ============ RESPONSIVO ============ */
+@media(max-width:1120px){
+  .brand-resp{display:none}
+  .nav-links a{padding:10px 10px}
+}
 @media(max-width:860px){
+  .shots,.parc-grid{grid-template-columns:1fr}
+  .plat-feats{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
   .pain-grid,.serv-grid,.steps,.auth-grid,.form-card,.trust-row{grid-template-columns:1fr}
   .form-card{padding:36px 26px}
@@ -190,14 +221,15 @@ footer b{color:var(--text);font-weight:600}
       <div class="mark"><svg viewBox="0 0 100 100" style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" aria-label="Soteria"><circle cx="50" cy="50" r="48" fill="#1fa84f"/><g fill="#fff"><rect x="44" y="20" width="12" height="60" rx="2"/><rect x="20" y="44" width="60" height="12" rx="2"/></g><g transform="translate(50,53) scale(0.44) translate(-50,-50)"><path d="M25 60 C25 39 36 29 50 29 C64 29 75 39 75 60 Z" fill="#ffb200"/><rect x="15" y="60" width="70" height="9" rx="4.5" fill="#ffb200"/><rect x="46" y="22" width="8" height="9" rx="2.5" fill="#ffb200"/><g stroke="#e89400" stroke-width="3.6" stroke-linecap="round"><line x1="50" y1="32" x2="50" y2="58"/><line x1="38" y1="37" x2="38" y2="58"/><line x1="62" y1="37" x2="62" y2="58"/></g></g></svg></div>
       <div>
         <b>SOTERIA</b>
-        <span>Segurança do Trabalho<em class="brand-resp"> · Engenharia · CREA-PR 208582/D</em></span>
+        <span>Segurança do Trabalho<em class="brand-resp"> · CREA-PR 208582/D</em></span>
       </div>
     </div>
     <div class="nav-cta">
       <nav class="nav-links">
         <a href="#servicos">Serviços</a>
         <a href="#autoridade">Por que a Soteria</a>
-        <a href="#processo">Como funciona</a>
+        <a href="#plataforma">Plataforma</a>
+        <a href="#parceiros">Seja parceiro</a>
         <a href="diagnostico.html">Diagnóstico grátis</a>
         <a href="precos.html">Preços</a>
       </nav>
@@ -360,6 +392,65 @@ footer b{color:var(--text);font-weight:600}
   </div>
 </section>
 
+<!-- PLATAFORMA -->
+<section class="sec-pad plat" id="plataforma">
+  <div class="wrap">
+    <div class="sec-tag reveal">Plataforma Soteria</div>
+    <h2 class="sec-title reveal">A conformidade da sua empresa num painel. Não numa pasta de PDF.</h2>
+    <div class="shots">
+      <figure class="shot reveal" data-d="1">
+        <img src="img/erp-dashboard.png" alt="Painel da empresa com score de conformidade e pendências priorizadas" loading="lazy">
+        <figcaption>Painel da empresa — score em tempo real + pendências priorizadas</figcaption>
+      </figure>
+      <figure class="shot reveal" data-d="2">
+        <img src="img/erp-documentos.png" alt="Documentos com status de vencimento" loading="lazy">
+        <figcaption>Documentos — em dia, vencendo, vencido</figcaption>
+      </figure>
+      <figure class="shot reveal" data-d="3">
+        <img src="img/erp-carteira.png" alt="Visão da carteira com vencimentos críticos" loading="lazy">
+        <figcaption>Visão da carteira — o que vence primeiro na base inteira</figcaption>
+      </figure>
+    </div>
+    <div class="plat-feats reveal" data-d="2">
+      <div><b>Score contínuo</b>Calculado dos documentos reais, não de autodeclaração.</div>
+      <div><b>Alertas 60/30/7</b>E-mail antes do vencimento — fiscalização nunca pega de surpresa.</div>
+      <div><b>Laudos num lugar só</b>Os documentos que entregamos ficam no seu portal.</div>
+      <div><b>Pronto pro eSocial</b>O que o S-2240 precisa, organizado por função.</div>
+    </div>
+    <div class="plat-cta reveal" data-d="3">
+      <a class="btn btn-wa" href="app-demo/" data-app>Testar a demonstração →</a>
+      <a class="btn btn-ghost" href="#orcamento">Entrar na lista de lançamento</a>
+    </div>
+    <p class="plat-note">✓ demonstração aberta, sem cadastro · SaaS em lançamento — assinatura por faixa de funcionários</p>
+  </div>
+</section>
+
+<!-- PARCEIROS / AFILIADOS -->
+<section class="sec-pad" id="parceiros">
+  <div class="wrap">
+    <div class="sec-tag reveal">Programa de parceiros</div>
+    <h2 class="sec-title reveal">Indique. A gente executa. Você recebe — inclusive nas renovações.</h2>
+    <div class="parc-grid">
+      <ul>
+        <li class="reveal" data-d="1">Comissão em <strong>cada serviço fechado</strong> (PGR, laudos, LTCAT) — e de novo a <strong>cada renovação</strong>.</li>
+        <li class="reveal" data-d="2">Comissão <strong>recorrente</strong> sobre as mensalidades do painel dos clientes que você indicar.</li>
+        <li class="reveal" data-d="3"><strong>Materiais co-branded</strong> prontos: proposta, tabela de preços e guia SST + eSocial com a sua marca.</li>
+        <li class="reveal" data-d="4"><strong>Portal do afiliado</strong> com pipeline das indicações e extrato de comissões — em breve; até lá, extrato mensal transparente por e-mail.</li>
+        <li class="reveal" data-d="4">Pra quem atende empresas: <strong>contadores, advogados, corretores, consultorias</strong> — sua carteira vira receita recorrente.</li>
+      </ul>
+      <div class="parc-como reveal" data-d="2">
+        <h3>Como funciona</h3>
+        <ol>
+          <li>Você recebe seu <b>código de indicação</b> e os materiais.</li>
+          <li>Cliente fecha serviço ou assina o painel pelo seu código.</li>
+          <li>Todo mês: <b>extrato + Pix</b> das comissões. Simples assim.</li>
+        </ol>
+        <a class="btn btn-wa" style="margin-top:22px" href="https://wa.me/5541985058491?text=Quero%20ser%20parceiro(a)%20da%20Soteria%20(programa%20de%20afiliados)." >Quero ser parceiro →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FORM / ORÇAMENTO -->
 <section class="sec-pad form-sec" id="orcamento">
   <div class="wrap">
@@ -438,6 +529,26 @@ footer b{color:var(--text);font-weight:600}
 <script>
 /* === CONFIGURE AQUI === */
 const WHATS = "5541985058491"; // ex.: 5541999998888 (só números, com 55 e DDD)
+
+/* === segmentação por URL ===
+   ?perfil=parceiro|afiliado|contador → rola direto pra seção de parceria
+   ?ref=CODIGO      → marca indicação de afiliado por 90 dias e repassa pros links do app */
+const _params = new URLSearchParams(location.search);
+if (['contador','parceiro','afiliado'].includes(_params.get('perfil'))) {
+  window.addEventListener('load', () =>
+    document.getElementById('parceiros')?.scrollIntoView({ behavior: 'smooth' }));
+}
+const _ref = _params.get('ref');
+if (_ref) localStorage.setItem('soteria_ref', JSON.stringify({ ref: _ref, t: Date.now() }));
+const _savedRef = (() => {
+  try {
+    const o = JSON.parse(localStorage.getItem('soteria_ref'));
+    return o && Date.now() - o.t < 90 * 864e5 ? o.ref : null;
+  } catch { return null; }
+})();
+if (_savedRef) document.querySelectorAll('a[data-app]').forEach((a) => {
+  a.href += (a.href.includes('?') ? '&' : '?') + 'ref=' + encodeURIComponent(_savedRef);
+});
 
 /* monta link wa.me com mensagem */
 function waLink(msg){ return `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`; }
