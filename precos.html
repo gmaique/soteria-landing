@@ -10,9 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#161616;--layer:#1e1e1e;--layer-2:#262626;--border:#393939;--border-strong:#8d8d8d;
-  --text:#f4f4f4;--text-2:#c6c6c6;--helper:#8d8d8d;
-  --hazard:#ffb200;--hazard-deep:#e89400;--signal:#fa4d56;--green:#42be65;--ink:#161616;
+  --bg:#ffffff;--layer:#f4f4f4;--layer-2:#e8e8e8;--border:#e0e0e0;--border-strong:#8d8d8d;
+  --text:#161616;--text-2:#525252;--helper:#6f6f6f;
+  --accent:#0f62fe;--accent-hover:#0353e9;--accent-light:#d0e2ff;--accent-text:#0043ce;
+  --signal:#da1e28;--green:#24a148;
   --body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -20,33 +21,33 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--body);font-weight:400;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 a{color:inherit;text-decoration:none}
-.hazard-tape{height:8px;background:repeating-linear-gradient(45deg,var(--hazard) 0 16px,var(--bg) 16px 32px);position:relative;z-index:2}
+.hazard-tape{display:none}
 
-header{position:sticky;top:0;z-index:50;background:rgba(22,22,22,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;align-items:center;gap:12px}
-.brand .mark{width:36px;height:36px;flex:none;background:var(--hazard);display:grid;place-items:center;padding:3px}
+.brand .mark{width:38px;height:38px;flex:none;background:none;display:grid;place-items:center}
 .brand b{font-weight:600;letter-spacing:.01em;font-size:.98rem;display:block;line-height:1.15}
 .brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase}
-.btn{font-family:var(--body);font-weight:400;font-size:.875rem;height:48px;padding:0 20px;cursor:pointer;border:none;border-radius:0;display:inline-flex;align-items:center;gap:24px;transition:background .11s,border-color .11s;letter-spacing:.01em}
-.btn-wa{background:var(--hazard);color:var(--ink);font-weight:500}
-.btn-wa:hover{background:var(--hazard-deep)}
-.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border-strong)}
-.btn-ghost:hover{background:var(--layer-2);border-color:var(--text)}
+.btn{font-family:var(--body);font-weight:400;font-size:.875rem;height:48px;padding:0 20px;cursor:pointer;border:none;border-radius:0;display:inline-flex;align-items:center;gap:24px;transition:background .11s,border-color .11s,color .11s;letter-spacing:.01em}
+.btn-wa{background:var(--accent);color:#fff;font-weight:500}
+.btn-wa:hover{background:var(--accent-hover)}
+.btn-ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn-ghost:hover{background:var(--accent);color:#fff}
 .nav .btn{height:40px;padding:0 16px}
 
 .hero{position:relative;padding:80px 0 48px;text-align:center;border-bottom:1px solid var(--border)}
-.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--hazard);margin-bottom:20px}
+.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
 h1{font-weight:300;font-size:clamp(2.1rem,4.8vw,3.4rem);line-height:1.14;letter-spacing:-.01em;position:relative;z-index:2}
-h1 .hl{color:var(--hazard);font-weight:400}
+h1 .hl{color:var(--accent);font-weight:400}
 .hero p{font-size:1.05rem;color:var(--text-2);font-weight:300;max-width:58ch;margin:22px auto 0;position:relative;z-index:2}
 
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:48px;align-items:stretch}
-.card{background:var(--layer);border:none;border-radius:0;padding:36px 30px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .11s}
-.card:hover{background:var(--layer-2)}
-.card.feat{box-shadow:inset 0 3px 0 var(--hazard)}
-.card .badge{position:absolute;top:0;right:0;background:var(--hazard);color:var(--ink);font-family:var(--mono);font-size:.6rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;padding:5px 12px}
-.card .tier{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--hazard)}
+.card{background:var(--bg);border:none;border-radius:0;padding:36px 30px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .11s}
+.card:hover{background:#fafafa}
+.card.feat{box-shadow:inset 0 3px 0 var(--accent)}
+.card .badge{position:absolute;top:0;right:0;background:var(--accent);color:#fff;font-family:var(--mono);font-size:.6rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;padding:5px 12px}
+.card .tier{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 .card h3{font-weight:400;font-size:1.5rem;letter-spacing:-.01em;margin:12px 0 6px}
 .card .desc{color:var(--text-2);font-size:.9rem;font-weight:300;min-height:48px}
 .card .price{font-weight:300;font-size:2rem;margin:18px 0 4px;letter-spacing:-.01em}
@@ -58,17 +59,17 @@ h1 .hl{color:var(--hazard);font-weight:400}
 
 .note{text-align:center;font-family:var(--mono);font-size:.76rem;color:var(--helper);padding:18px 0 0}
 
-.why{padding:80px 0;border-top:1px solid var(--border);margin-top:56px}
+.why{padding:80px 0;background:var(--layer);border-top:1px solid var(--border);margin-top:56px}
 .why h2{font-weight:300;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.01em;text-align:center;max-width:26ch;margin:0 auto 40px;line-height:1.2}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.why-card{background:var(--layer);border:none;border-radius:0;padding:28px 26px;transition:background .11s}
-.why-card:hover{background:var(--layer-2)}
-.why-card .ic{font-family:var(--mono);color:var(--hazard);font-size:.78rem;margin-bottom:28px}
+.why-card{background:var(--bg);border:none;border-radius:0;padding:28px 26px;transition:background .11s}
+.why-card:hover{background:#fafafa}
+.why-card .ic{font-family:var(--mono);color:var(--accent);font-size:.78rem;margin-bottom:28px}
 .why-card h4{font-weight:600;font-size:1rem;margin-bottom:8px}
 .why-card p{color:var(--text-2);font-size:.88rem;font-weight:300}
 
-.final{background:var(--layer);border:1px solid var(--border);border-radius:0;padding:56px;text-align:center;position:relative;overflow:hidden;margin-bottom:80px}
-.final::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(45deg,var(--hazard) 0 14px,var(--bg) 14px 28px)}
+.final{background:var(--layer);border:none;border-radius:0;padding:56px;text-align:center;position:relative;overflow:hidden;margin:64px 0 80px}
+.final::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent)}
 .final h2{font-weight:300;font-size:clamp(1.7rem,2.8vw,2.3rem);letter-spacing:-.01em;line-height:1.15}
 .final p{color:var(--text-2);font-weight:300;margin:14px auto 28px;max-width:48ch}
 
@@ -76,7 +77,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:36px 0;fo
 footer b{color:var(--text)}
 .disclaimer{max-width:780px;margin:16px auto 0;font-size:.7rem;line-height:1.7;color:var(--helper)}
 
-.fab{position:fixed;bottom:24px;right:24px;z-index:60;background:#25D366;color:#0b3d23;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.4);transition:transform .15s}
+.fab{position:fixed;bottom:24px;right:24px;z-index:60;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.22);transition:transform .15s}
 .fab:hover{transform:scale(1.06)}
 .fab svg{width:28px;height:28px}
 
@@ -84,7 +85,6 @@ footer b{color:var(--text)}
 </style>
 </head>
 <body>
-<div class="hazard-tape"></div>
 
 <header>
   <div class="wrap nav">
