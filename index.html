@@ -166,11 +166,29 @@ footer b{color:var(--text);font-weight:600}
 
 /* ============ PLATAFORMA (telas do ERP) ============ */
 .plat{background:var(--layer)}
-.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
-.shot{background:var(--bg);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
-.shot img{display:block;width:100%}
-.shot figcaption{font-family:var(--mono);font-size:.7rem;color:var(--helper);padding:10px 14px;border-top:1px solid var(--border);margin-top:auto}
-.shot img{aspect-ratio:3/2;object-fit:cover;object-position:top left}
+/* palco do produto: moldura de navegador + abas + lightbox */
+.stage{background:var(--bg);border:1px solid var(--border);margin-top:44px;box-shadow:0 24px 60px -32px rgba(22,22,22,.25)}
+.stage-bar{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid var(--border);background:var(--layer)}
+.stage-bar .dots{display:flex;gap:6px}
+.stage-bar .dots i{width:10px;height:10px;border-radius:50%;background:#c6c6c6;display:block}
+.stage-bar .urlbar{flex:1;text-align:center;font-family:var(--mono);font-size:.7rem;color:var(--helper);background:var(--bg);border:1px solid var(--border);padding:5px 14px;max-width:340px;margin:0 auto}
+.stage-bar .zoom-hint{font-family:var(--mono);font-size:.68rem;color:var(--accent);background:none;border:none;cursor:pointer;white-space:nowrap}
+.stage-view{position:relative;cursor:zoom-in;overflow:hidden}
+.stage-view img{display:block;width:100%;transition:opacity .22s ease}
+.stage-view::after{content:"clique para ampliar";position:absolute;right:14px;bottom:14px;font-family:var(--mono);font-size:.66rem;color:#fff;background:rgba(22,22,22,.72);padding:6px 12px;opacity:0;transition:opacity .2s}
+.stage-view:hover::after{opacity:1}
+.stage-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-top:none}
+.stab{background:var(--layer);border:none;border-top:3px solid transparent;padding:16px 18px;text-align:left;cursor:pointer;font-family:var(--body);transition:background .11s}
+.stab b{display:block;font-weight:600;font-size:.92rem;color:var(--text)}
+.stab span{font-size:.78rem;color:var(--helper);font-weight:300;display:block;margin-top:2px}
+.stab:hover{background:var(--bg)}
+.stab.active{background:var(--bg);border-top-color:var(--accent)}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(22,22,22,.93);display:grid;place-items:center;padding:24px}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:96vw;max-height:90vh;box-shadow:0 30px 80px rgba(0,0,0,.5);cursor:zoom-out}
+.lightbox .lb-close{position:absolute;top:16px;right:20px;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;width:40px;height:40px;font-size:1rem;cursor:pointer}
+.lightbox .lb-close:hover{background:rgba(255,255,255,.12)}
+.lightbox figcaption{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.75);font-family:var(--mono);font-size:.72rem}
 .plat-feats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:14px}
 .plat-feats div{background:var(--bg);padding:16px 18px;font-size:.85rem;color:var(--text-2)}
 .plat-feats b{display:block;color:var(--text);font-weight:600;margin-bottom:3px;font-size:.9rem}
@@ -195,7 +213,11 @@ footer b{color:var(--text);font-weight:600}
   .nav-links a{padding:10px 10px}
 }
 @media(max-width:860px){
-  .shots,.parc-grid{grid-template-columns:1fr}
+  .parc-grid{grid-template-columns:1fr}
+  .stage-tabs{grid-template-columns:1fr}
+  .stab{border-top:none;border-left:3px solid transparent}
+  .stab.active{border-left-color:var(--accent)}
+  .stage-bar .urlbar{display:none}
   .plat-feats{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
   .pain-grid,.serv-grid,.steps,.auth-grid,.form-card,.trust-row{grid-template-columns:1fr}
@@ -397,19 +419,30 @@ footer b{color:var(--text);font-weight:600}
   <div class="wrap">
     <div class="sec-tag reveal">Plataforma Soteria</div>
     <h2 class="sec-title reveal">A conformidade da sua empresa num painel. Não numa pasta de PDF.</h2>
-    <div class="shots">
-      <figure class="shot reveal" data-d="1">
-        <img src="img/erp-dashboard.png" alt="Painel da empresa com score de conformidade e pendências priorizadas" loading="lazy">
-        <figcaption>Painel da empresa — score em tempo real + pendências priorizadas</figcaption>
-      </figure>
-      <figure class="shot reveal" data-d="2">
-        <img src="img/erp-documentos.png" alt="Documentos com status de vencimento" loading="lazy">
-        <figcaption>Documentos — em dia, vencendo, vencido</figcaption>
-      </figure>
-      <figure class="shot reveal" data-d="3">
-        <img src="img/erp-carteira.png" alt="Visão da carteira com vencimentos críticos" loading="lazy">
-        <figcaption>Visão da carteira — o que vence primeiro na base inteira</figcaption>
-      </figure>
+    <div class="stage reveal" data-d="1">
+      <div class="stage-bar">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="urlbar">app.soteriasst.com.br</span>
+        <button class="zoom-hint" type="button" onclick="lbOpen()">⤢ ampliar</button>
+      </div>
+      <div class="stage-view" onclick="lbOpen()">
+        <img id="stageImg" src="img/erp-dashboard.png"
+             alt="Painel da empresa com score de conformidade e pendências priorizadas">
+      </div>
+      <div class="stage-tabs" role="tablist">
+        <button class="stab active" role="tab" data-img="img/erp-dashboard.png"
+                data-cap="Painel da empresa — score em tempo real + pendências priorizadas">
+          <b>Painel da empresa</b><span>Score em tempo real + pendências priorizadas</span>
+        </button>
+        <button class="stab" role="tab" data-img="img/erp-documentos.png"
+                data-cap="Documentos — em dia, vencendo, vencido">
+          <b>Documentos</b><span>Em dia · vencendo · vencido, com alertas</span>
+        </button>
+        <button class="stab" role="tab" data-img="img/erp-carteira.png"
+                data-cap="Visão da carteira — o que vence primeiro na base inteira">
+          <b>Visão da carteira</b><span>O que vence primeiro na base inteira</span>
+        </button>
+      </div>
     </div>
     <div class="plat-feats reveal" data-d="2">
       <div><b>Score contínuo</b>Calculado dos documentos reais, não de autodeclaração.</div>
@@ -526,6 +559,13 @@ footer b{color:var(--text);font-weight:600}
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
 </a>
 
+<!-- LIGHTBOX das telas da plataforma -->
+<div class="lightbox" id="lightbox" hidden onclick="lbClose()">
+  <button class="lb-close" type="button" aria-label="Fechar">✕</button>
+  <img id="lbImg" src="" alt="">
+  <figcaption id="lbCap"></figcaption>
+</div>
+
 <script>
 /* === CONFIGURE AQUI === */
 const WHATS = "5541985058491"; // ex.: 5541999998888 (só números, com 55 e DDD)
@@ -549,6 +589,34 @@ const _savedRef = (() => {
 if (_savedRef) document.querySelectorAll('a[data-app]').forEach((a) => {
   a.href += (a.href.includes('?') ? '&' : '?') + 'ref=' + encodeURIComponent(_savedRef);
 });
+
+/* === showcase da plataforma: abas + lightbox === */
+const stageImg = document.getElementById('stageImg');
+let stageCap = "Painel da empresa — score em tempo real + pendências priorizadas";
+document.querySelectorAll('.stab').forEach((b) => b.addEventListener('click', () => {
+  document.querySelectorAll('.stab').forEach((x) => x.classList.remove('active'));
+  b.classList.add('active');
+  stageCap = b.dataset.cap;
+  stageImg.style.opacity = 0;
+  setTimeout(() => {
+    stageImg.src = b.dataset.img;
+    stageImg.alt = b.dataset.cap;
+    stageImg.onload = () => { stageImg.style.opacity = 1; };
+  }, 180);
+}));
+function lbOpen(){
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lbImg').src = stageImg.src;
+  document.getElementById('lbCap').textContent = stageCap;
+  lb.hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+function lbClose(){
+  document.getElementById('lightbox').hidden = true;
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lbClose(); });
+
 
 /* monta link wa.me com mensagem */
 function waLink(msg){ return `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`; }
