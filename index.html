@@ -436,7 +436,7 @@ footer b{color:var(--text);font-weight:600}
         <li class="reveal" data-d="2">Comissão <strong>recorrente</strong> sobre as mensalidades do painel dos clientes que você indicar.</li>
         <li class="reveal" data-d="3"><strong>Materiais co-branded</strong> prontos: proposta, tabela de preços e guia SST + eSocial com a sua marca.</li>
         <li class="reveal" data-d="4"><strong>Portal do afiliado</strong> com pipeline das indicações e extrato de comissões — em breve; até lá, extrato mensal transparente por e-mail.</li>
-        <li class="reveal" data-d="4">Pra quem atende empresas: <strong>contadores, advogados, corretores, consultorias</strong> — sua carteira vira receita recorrente.</li>
+        <li class="reveal" data-d="4">Pra quem <strong>atende ou assessora empresas</strong>: sua carteira de clientes vira receita recorrente.</li>
       </ul>
       <div class="parc-como reveal" data-d="2">
         <h3>Como funciona</h3>
@@ -531,10 +531,10 @@ footer b{color:var(--text);font-weight:600}
 const WHATS = "5541985058491"; // ex.: 5541999998888 (só números, com 55 e DDD)
 
 /* === segmentação por URL ===
-   ?perfil=parceiro|afiliado|contador → rola direto pra seção de parceria
+   ?perfil=parceiro|afiliado → rola direto pra seção de parceria
    ?ref=CODIGO      → marca indicação de afiliado por 90 dias e repassa pros links do app */
 const _params = new URLSearchParams(location.search);
-if (['contador','parceiro','afiliado'].includes(_params.get('perfil'))) {
+if (['parceiro','afiliado'].includes(_params.get('perfil'))) {
   window.addEventListener('load', () =>
     document.getElementById('parceiros')?.scrollIntoView({ behavior: 'smooth' }));
 }
