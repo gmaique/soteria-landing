@@ -6,231 +6,179 @@
 <title>Soteria — Segurança do Trabalho | Curitiba</title>
 <meta name="description" content="Laudos de Insalubridade, Periculosidade, LTCAT e PGR com ART em Curitiba e Região Metropolitana. Conformidade total com o e-Social SST." />
 
-<!-- ====== FONTES (industrial-editorial) ====== -->
+<!-- ====== FONTES (IBM Plex — Carbon Design System) ====== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --ink:#121417;          /* base escura industrial */
-  --ink-2:#1b1e23;
-  --ink-3:#23272e;
-  --paper:#f4f1ea;        /* off-white quente */
-  --hazard:#ffb200;       /* amarelo de segurança */
+  /* IBM Carbon g100 + acento Soteria */
+  --bg:#161616;            /* carbon gray-100 */
+  --layer:#1e1e1e;         /* layer-01 */
+  --layer-2:#262626;       /* layer-02 */
+  --field:#1e1e1e;
+  --border:#393939;        /* border-subtle */
+  --border-strong:#8d8d8d;
+  --text:#f4f4f4;          /* text-primary */
+  --text-2:#c6c6c6;        /* text-secondary */
+  --helper:#8d8d8d;
+  --hazard:#ffb200;        /* amarelo de segurança (marca) */
   --hazard-deep:#e89400;
-  --signal:#ff5630;       /* alerta */
-  --line:rgba(244,241,234,.12);
-  --muted:rgba(244,241,234,.62);
-  --display:"Archivo Black", sans-serif;
-  --head:"Archivo", sans-serif;
-  --body:"IBM Plex Sans", sans-serif;
-  --mono:"IBM Plex Mono", monospace;
+  --signal:#fa4d56;        /* carbon red-50 */
+  --green:#42be65;         /* carbon green-40 */
+  --ink:#161616;
+  --body:"IBM Plex Sans",sans-serif;
+  --mono:"IBM Plex Mono",monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--ink);
-  color:var(--paper);
-  font-family:var(--body);
-  font-weight:300;
-  line-height:1.6;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-/* textura de grão sutil */
-body::before{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.04;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-weight:400;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 a{color:inherit;text-decoration:none}
 
-/* faixa de perigo (hazard tape) */
-.hazard-tape{
-  height:14px;
-  background:repeating-linear-gradient(45deg,var(--hazard) 0 22px,var(--ink) 22px 44px);
-  position:relative;z-index:2;
-}
+/* faixa de perigo — motivo de marca, fina e disciplinada */
+.hazard-tape{height:8px;background:repeating-linear-gradient(45deg,var(--hazard) 0 16px,var(--bg) 16px 32px);position:relative;z-index:2}
 
 /* ============ HEADER ============ */
-header{
-  position:sticky;top:0;z-index:50;
-  background:rgba(18,20,23,.82);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
-.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand .mark{
-  width:42px;height:42px;flex:none;border-radius:9px;
-  background:var(--hazard);color:var(--ink);
-  display:grid;place-items:center;font-family:var(--display);font-size:20px;
-  box-shadow:0 0 0 4px rgba(255,178,0,.15);
-}
-.brand b{font-family:var(--head);font-weight:800;letter-spacing:-.02em;font-size:1.02rem;display:block;line-height:1.1}
-.brand span{font-family:var(--mono);font-size:.66rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:50;background:rgba(22,22,22,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{width:36px;height:36px;flex:none;background:var(--hazard);display:grid;place-items:center;padding:3px}
+.brand b{font-weight:600;letter-spacing:.01em;font-size:.98rem;display:block;line-height:1.15}
+.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase}
 .brand span em{font-style:normal}
-.nav-cta{display:flex;align-items:center;gap:18px}
-.nav-links{display:flex;gap:26px;font-size:.86rem;font-weight:400}
-.nav-links a{color:var(--muted);transition:color .2s}
-.nav-links a:hover{color:var(--paper)}
-.btn{
-  font-family:var(--head);font-weight:700;font-size:.86rem;
-  padding:13px 22px;border-radius:10px;cursor:pointer;border:none;
-  display:inline-flex;align-items:center;gap:9px;transition:transform .15s, box-shadow .2s, background .2s;
-  letter-spacing:.01em;
-}
-.btn-wa{background:var(--hazard);color:var(--ink);box-shadow:0 6px 24px rgba(255,178,0,.28)}
-.btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,178,0,.4)}
-.btn-ghost{background:transparent;color:var(--paper);border:1px solid var(--line)}
-.btn-ghost:hover{border-color:var(--hazard);color:var(--hazard)}
+.nav-cta{display:flex;align-items:center;gap:8px}
+.nav-links{display:flex;font-size:.875rem;font-weight:400}
+.nav-links a{color:var(--text-2);padding:10px 14px;transition:background .11s,color .11s}
+.nav-links a:hover{background:var(--layer-2);color:var(--text)}
+
+/* Botões — Carbon: retangulares, texto à esquerda, sem brilho */
+.btn{font-family:var(--body);font-weight:400;font-size:.875rem;height:48px;padding:0 20px;cursor:pointer;border:none;border-radius:0;display:inline-flex;align-items:center;gap:24px;transition:background .11s,border-color .11s;letter-spacing:.01em}
+.btn-wa{background:var(--hazard);color:var(--ink);font-weight:500}
+.btn-wa:hover{background:var(--hazard-deep)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border-strong)}
+.btn-ghost:hover{background:var(--layer-2);border-color:var(--text)}
+.nav .btn{height:40px;padding:0 16px}
 
 /* ============ HERO ============ */
-.hero{position:relative;padding:92px 0 80px;overflow:hidden}
-.hero::after{ /* halo radial */
-  content:"";position:absolute;top:-30%;right:-15%;width:760px;height:760px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,178,0,.16),transparent 62%);pointer-events:none;
-}
-.kicker{
-  font-family:var(--mono);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--hazard);display:inline-flex;align-items:center;gap:12px;margin-bottom:26px;
-}
-.kicker::before{content:"";width:38px;height:2px;background:var(--hazard)}
-h1{
-  font-family:var(--display);
-  font-size:clamp(2.6rem,6.4vw,5.1rem);
-  line-height:.96;letter-spacing:-.025em;text-transform:uppercase;
-  max-width:14ch;
-}
-h1 .hl{color:var(--hazard)}
-.hero p.sub{
-  font-size:clamp(1.05rem,1.7vw,1.28rem);color:var(--muted);font-weight:300;
-  max-width:52ch;margin:28px 0 38px;
-}
-.hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
-.trust-row{display:flex;flex-wrap:wrap;gap:26px;margin-top:46px;padding-top:30px;border-top:1px solid var(--line)}
-.trust-row div{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
-.trust-row b{display:block;font-family:var(--head);font-weight:800;font-size:1.5rem;color:var(--paper);letter-spacing:-.02em}
+.hero{position:relative;padding:96px 0 72px;border-bottom:1px solid var(--border)}
+.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--hazard);display:inline-flex;align-items:center;gap:12px;margin-bottom:24px}
+.kicker::before{content:"";width:32px;height:1px;background:var(--hazard)}
+h1{font-weight:300;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.12;letter-spacing:-.01em;max-width:22ch}
+h1 .hl{color:var(--hazard);font-weight:400}
+.hero p.sub{font-size:clamp(1rem,1.5vw,1.18rem);color:var(--text-2);font-weight:300;max-width:54ch;margin:24px 0 36px;line-height:1.6}
+.hero-cta{display:flex;flex-wrap:wrap;gap:1px;align-items:center}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:56px;border:1px solid var(--border)}
+.trust-row div{font-family:var(--mono);font-size:.72rem;color:var(--helper);background:var(--layer);padding:18px 20px}
+.trust-row b{display:block;font-family:var(--body);font-weight:300;font-size:1.6rem;color:var(--text);letter-spacing:-.01em;margin-bottom:4px}
 
 /* reveal */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
-[data-d="1"]{transition-delay:.08s}[data-d="2"]{transition-delay:.16s}[data-d="3"]{transition-delay:.24s}[data-d="4"]{transition-delay:.32s}
+[data-d="1"]{transition-delay:.07s}[data-d="2"]{transition-delay:.14s}[data-d="3"]{transition-delay:.21s}[data-d="4"]{transition-delay:.28s}
 
 /* ============ SECTION HEADINGS ============ */
 section{position:relative;z-index:2}
-.sec-pad{padding:96px 0}
-.sec-tag{font-family:var(--mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--hazard);margin-bottom:16px}
-.sec-title{font-family:var(--head);font-weight:800;font-size:clamp(1.9rem,3.8vw,3rem);letter-spacing:-.025em;line-height:1.03;max-width:18ch}
+.sec-pad{padding:88px 0}
+.sec-tag{font-family:var(--mono);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--hazard);margin-bottom:14px}
+.sec-title{font-weight:300;font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.01em;line-height:1.18;max-width:26ch}
 
 /* ============ DORES ============ */
-.pain{background:var(--ink-2)}
-.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:48px;border:1px solid var(--line)}
-.pain-card{background:var(--ink-2);padding:38px 32px}
-.pain-card .ix{font-family:var(--display);color:var(--signal);font-size:1.4rem;margin-bottom:18px}
-.pain-card h3{font-family:var(--head);font-weight:700;font-size:1.12rem;margin-bottom:10px}
-.pain-card p{color:var(--muted);font-size:.95rem}
+.pain{background:var(--layer)}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:44px;border:1px solid var(--border)}
+.pain-card{background:var(--layer);padding:32px 28px;transition:background .11s}
+.pain-card:hover{background:var(--layer-2)}
+.pain-card .ix{font-family:var(--mono);color:var(--signal);font-size:1.1rem;font-weight:500;margin-bottom:16px;width:28px;height:28px;border:1px solid var(--signal);display:grid;place-items:center}
+.pain-card h3{font-weight:600;font-size:1.05rem;margin-bottom:8px}
+.pain-card p{color:var(--text-2);font-size:.9rem;font-weight:300}
 
 /* ============ SERVIÇOS ============ */
-.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:50px}
-.serv{
-  background:linear-gradient(160deg,var(--ink-3),var(--ink-2));
-  border:1px solid var(--line);border-radius:16px;padding:34px 30px;position:relative;overflow:hidden;
-  transition:transform .25s, border-color .25s;
-}
-.serv::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--hazard);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.serv:hover{transform:translateY(-4px);border-color:rgba(255,178,0,.4)}
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:44px;border:1px solid var(--border)}
+.serv{background:var(--layer);border:none;border-radius:0;padding:32px 28px;position:relative;overflow:hidden;transition:background .11s}
+.serv::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--hazard);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.serv:hover{background:var(--layer-2)}
 .serv:hover::before{transform:scaleX(1)}
-.serv .num{font-family:var(--mono);font-size:.72rem;color:var(--hazard);letter-spacing:.1em}
-.serv h3{font-family:var(--head);font-weight:800;font-size:1.45rem;margin:14px 0 12px;letter-spacing:-.02em}
-.serv p{color:var(--muted);font-size:.95rem}
-.serv .tag{display:inline-block;margin-top:18px;font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--paper);background:rgba(255,178,0,.12);border:1px solid rgba(255,178,0,.3);padding:5px 11px;border-radius:6px}
+.serv .num{font-family:var(--mono);font-size:.72rem;color:var(--hazard);letter-spacing:.08em}
+.serv h3{font-weight:400;font-size:1.4rem;margin:14px 0 10px;letter-spacing:-.01em}
+.serv p{color:var(--text-2);font-size:.9rem;font-weight:300}
+.serv .tag{display:inline-block;margin-top:18px;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text);background:var(--layer-2);border:1px solid var(--border);padding:5px 10px;border-radius:0}
 .serv.exclusive .tag{color:var(--ink);background:var(--hazard);border-color:var(--hazard)}
 
 /* ============ AUTORIDADE ============ */
-.auth{background:var(--ink-2);position:relative}
-.auth-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
-.auth ul{list-style:none;margin-top:30px;display:grid;gap:16px}
-.auth li{display:flex;gap:14px;align-items:flex-start;font-size:1rem}
-.auth li .ck{flex:none;width:26px;height:26px;border-radius:7px;background:var(--hazard);color:var(--ink);display:grid;place-items:center;font-weight:900;font-family:var(--head);font-size:.85rem}
-.cred-card{background:var(--ink);border:1px solid var(--line);border-radius:18px;padding:36px;position:relative;overflow:hidden}
-.cred-card::after{content:"";position:absolute;bottom:-40px;right:-40px;width:160px;height:160px;background:repeating-linear-gradient(45deg,rgba(255,178,0,.12) 0 12px,transparent 12px 24px);border-radius:50%}
-.cred-card .reg{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.85rem}
+.auth{background:var(--layer)}
+.auth-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.auth ul{list-style:none;margin-top:28px;display:grid;gap:14px}
+.auth li{display:flex;gap:14px;align-items:flex-start;font-size:.95rem;font-weight:300}
+.auth li strong{font-weight:500}
+.auth li .ck{flex:none;width:22px;height:22px;background:transparent;border:1px solid var(--green);color:var(--green);display:grid;place-items:center;font-weight:600;font-size:.78rem;margin-top:1px}
+.cred-card{background:var(--bg);border:1px solid var(--border);border-radius:0;padding:8px 28px}
+.cred-card .reg{display:flex;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px solid var(--border);font-family:var(--mono);font-size:.8rem}
 .cred-card .reg:last-child{border:0}
-.cred-card .reg span{color:var(--muted)}
-.cred-card .reg b{color:var(--hazard)}
+.cred-card .reg span{color:var(--helper)}
+.cred-card .reg b{color:var(--text);font-weight:500;text-align:right}
+.cred-card .reg:first-child b{color:var(--hazard)}
 
 /* ============ PROCESSO ============ */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px;counter-reset:s}
-.step{padding:30px 24px;border:1px solid var(--line);border-radius:14px;background:var(--ink-2);position:relative}
-.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--display);font-size:2.6rem;color:rgba(255,178,0,.22);display:block;margin-bottom:12px;line-height:1}
-.step h4{font-family:var(--head);font-weight:700;font-size:1.05rem;margin-bottom:8px}
-.step p{color:var(--muted);font-size:.9rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:44px;border:1px solid var(--border);counter-reset:s}
+.step{padding:28px 24px;border:none;border-radius:0;background:var(--layer);position:relative;transition:background .11s}
+.step:hover{background:var(--layer-2)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--mono);font-size:.78rem;color:var(--hazard);display:block;margin-bottom:40px}
+.step h4{font-weight:600;font-size:1rem;margin-bottom:6px}
+.step p{color:var(--text-2);font-size:.86rem;font-weight:300}
 
 /* ============ FORM ============ */
-.form-sec{background:linear-gradient(180deg,var(--ink),var(--ink-2))}
-.form-card{
-  background:var(--ink-2);border:1px solid var(--line);border-radius:22px;
-  padding:54px;display:grid;grid-template-columns:1fr 1fr;gap:48px;position:relative;overflow:hidden;
-}
-.form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(45deg,var(--hazard) 0 18px,var(--ink) 18px 36px)}
-.form-card h2{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.4rem);text-transform:uppercase;letter-spacing:-.02em;line-height:1}
-.form-card .lead-copy p{color:var(--muted);margin-top:18px}
-.form-card .lead-copy .resp{margin-top:28px;font-family:var(--mono);font-size:.8rem;color:var(--hazard)}
+.form-sec{background:var(--bg)}
+.form-card{background:var(--layer);border:1px solid var(--border);border-radius:0;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;position:relative;overflow:hidden}
+.form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(45deg,var(--hazard) 0 14px,var(--bg) 14px 28px)}
+.form-card h2{font-weight:300;font-size:clamp(1.7rem,2.8vw,2.2rem);letter-spacing:-.01em;line-height:1.15}
+.form-card .lead-copy p{color:var(--text-2);margin-top:16px;font-weight:300}
+.form-card .lead-copy .resp{margin-top:24px;font-family:var(--mono);font-size:.78rem;color:var(--hazard)}
 form{display:grid;gap:16px}
-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:7px}
-input,select{
-  width:100%;background:var(--ink);border:1px solid var(--line);border-radius:10px;
-  padding:14px 16px;color:var(--paper);font-family:var(--body);font-size:1rem;transition:border-color .2s,box-shadow .2s;
-}
-input:focus,select:focus{outline:none;border-color:var(--hazard);box-shadow:0 0 0 3px rgba(255,178,0,.16)}
-.form-card .btn-wa{width:100%;justify-content:center;margin-top:6px;font-size:1rem;padding:16px}
-.priv{font-size:.74rem;color:var(--muted);text-align:center}
+label{font-size:.75rem;letter-spacing:.02em;color:var(--text-2);display:block;margin-bottom:7px}
+input,select{width:100%;background:var(--field);border:none;border-bottom:1px solid var(--border-strong);border-radius:0;padding:13px 16px;color:var(--text);font-family:var(--body);font-size:.95rem;transition:outline .1s}
+input:focus,select:focus{outline:2px solid var(--hazard);outline-offset:-2px;border-bottom-color:transparent}
+input::placeholder{color:var(--helper)}
+.form-card .btn-wa{width:100%;justify-content:center;margin-top:6px;font-size:.95rem}
+.priv{font-size:.74rem;color:var(--helper);text-align:center}
 
 /* ============ FOOTER ============ */
-footer{background:var(--ink);border-top:1px solid var(--line);padding:54px 0 40px;font-size:.86rem;color:var(--muted)}
-.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px}
-footer b{color:var(--paper);font-family:var(--head)}
-.disclaimer{margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-size:.74rem;line-height:1.7}
+footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 0 36px;font-size:.86rem;color:var(--text-2);font-weight:300}
+.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px}
+footer b{color:var(--text);font-weight:600}
+.disclaimer{margin-top:28px;padding-top:22px;border-top:1px solid var(--border);font-size:.74rem;line-height:1.7;color:var(--helper)}
 
 /* ============ FLOATING WHATSAPP ============ */
-.fab{position:fixed;bottom:26px;right:26px;z-index:60;background:#25D366;color:#0b3d23;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45);transition:transform .2s;font-weight:900}
-.fab:hover{transform:scale(1.08)}
-.fab svg{width:32px;height:32px}
+.fab{position:fixed;bottom:24px;right:24px;z-index:60;background:#25D366;color:#0b3d23;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.4);transition:transform .15s}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:28px;height:28px}
 
 /* ============ DIAGNÓSTICO (banner) ============ */
-.diag-card{
-  background:linear-gradient(135deg,var(--ink-2),var(--ink-3));
-  border:1px solid rgba(255,178,0,.35);border-radius:18px;
-  padding:46px 48px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;
-  position:relative;overflow:hidden;
-}
-.diag-card::after{content:"";position:absolute;top:-60%;right:-8%;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,178,0,.14),transparent 62%);pointer-events:none}
+.diag-card{background:var(--layer);border:1px solid var(--border);border-left:4px solid var(--hazard);border-radius:0;padding:44px 48px;display:flex;align-items:center;gap:40px;flex-wrap:wrap}
 .diag-card .txt{flex:1;min-width:260px}
-.diag-card h3{font-family:var(--head);font-weight:800;font-size:clamp(1.4rem,3vw,2rem);letter-spacing:-.02em;line-height:1.1}
-.diag-card h3 .hl{color:var(--hazard)}
-.diag-card p{color:var(--muted);margin-top:10px;max-width:52ch}
-.diag-card ul{list-style:none;display:flex;gap:18px;flex-wrap:wrap;margin-top:16px}
-.diag-card li{font-family:var(--mono);font-size:.72rem;color:var(--paper);display:flex;align-items:center;gap:7px}
-.diag-card li::before{content:"✓";color:var(--green);font-weight:900}
+.diag-card h3{font-weight:300;font-size:clamp(1.4rem,2.8vw,1.9rem);letter-spacing:-.01em;line-height:1.2}
+.diag-card h3 .hl{color:var(--hazard);font-weight:400}
+.diag-card p{color:var(--text-2);margin-top:10px;max-width:52ch;font-weight:300}
+.diag-card ul{list-style:none;display:flex;gap:20px;flex-wrap:wrap;margin-top:16px}
+.diag-card li{font-family:var(--mono);font-size:.72rem;color:var(--text);display:flex;align-items:center;gap:7px}
+.diag-card li::before{content:"✓";color:var(--green);font-weight:600}
 .diag-card .btn-wa{flex-shrink:0}
 .diag-free{font-family:var(--mono);font-size:.66rem;color:var(--green);margin-top:10px;display:block}
 
 /* ============ RESPONSIVO ============ */
 @media(max-width:860px){
   .nav-links{display:none}
-  .pain-grid,.serv-grid,.steps,.auth-grid,.form-card{grid-template-columns:1fr}
-  .steps{gap:14px}
-  .form-card{padding:34px 26px}
-  .hero{padding:64px 0 56px}
-  .nav{height:62px}
-  .brand .mark{width:36px;height:36px}
-  .brand b{font-size:.94rem}
+  .pain-grid,.serv-grid,.steps,.auth-grid,.form-card,.trust-row{grid-template-columns:1fr}
+  .form-card{padding:36px 26px}
+  .hero{padding:64px 0 52px}
+  .nav{height:58px}
+  .brand .mark{width:32px;height:32px}
+  .brand b{font-size:.92rem}
   .brand span{font-size:.56rem;white-space:nowrap}
   .brand-resp{display:none}
-  .nav .btn{font-size:.78rem;padding:10px 16px;white-space:nowrap}
-  .diag-card{padding:32px 26px;gap:24px}
+  .nav .btn{font-size:.8rem;padding:0 14px;height:36px}
+  .diag-card{padding:30px 24px;gap:24px}
+  .hero-cta{gap:10px}
 }
 </style>
 </head>
@@ -245,13 +193,13 @@ footer b{color:var(--paper);font-family:var(--head)}
       <div class="mark"><svg viewBox="0 0 100 100" style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" aria-label="Soteria"><circle cx="50" cy="50" r="48" fill="#1fa84f"/><g fill="#fff"><rect x="44" y="20" width="12" height="60" rx="2"/><rect x="20" y="44" width="60" height="12" rx="2"/></g><g transform="translate(50,53) scale(0.44) translate(-50,-50)"><path d="M25 60 C25 39 36 29 50 29 C64 29 75 39 75 60 Z" fill="#ffb200"/><rect x="15" y="60" width="70" height="9" rx="4.5" fill="#ffb200"/><rect x="46" y="22" width="8" height="9" rx="2.5" fill="#ffb200"/><g stroke="#e89400" stroke-width="3.6" stroke-linecap="round"><line x1="50" y1="32" x2="50" y2="58"/><line x1="38" y1="37" x2="38" y2="58"/><line x1="62" y1="37" x2="62" y2="58"/></g></g></svg></div>
       <div>
         <b>SOTERIA</b>
-        <span>Segurança do Trabalho<em class="brand-resp"> · Resp. Téc. Ginmaique dos Reis · CREA-PR 208582/D</em></span>
+        <span>Segurança do Trabalho<em class="brand-resp"> · Engenharia · CREA-PR 208582/D</em></span>
       </div>
     </div>
     <div class="nav-cta">
       <nav class="nav-links">
         <a href="#servicos">Serviços</a>
-        <a href="#autoridade">Quem sou</a>
+        <a href="#autoridade">Por que a Soteria</a>
         <a href="#processo">Como funciona</a>
         <a href="diagnostico.html">Diagnóstico grátis</a>
         <a href="precos.html">Preços</a>
@@ -362,10 +310,10 @@ footer b{color:var(--paper);font-family:var(--head)}
 <section class="sec-pad auth" id="autoridade">
   <div class="wrap auth-grid">
     <div>
-      <div class="sec-tag reveal">Por que comigo</div>
+      <div class="sec-tag reveal">Por que a Soteria</div>
       <h2 class="sec-title reveal">Habilitação que técnico de segurança não tem.</h2>
       <ul>
-        <li class="reveal" data-d="1"><span class="ck">✓</span> Engenheiro de Segurança do Trabalho com título de especialista anotado no <strong>CREA-PR</strong>.</li>
+        <li class="reveal" data-d="1"><span class="ck">✓</span> Responsabilidade técnica de <strong>Engenharia de Segurança do Trabalho</strong>, registrada no <strong>CREA-PR</strong>.</li>
         <li class="reveal" data-d="2"><span class="ck">✓</span> Laudos de insalubridade e periculosidade que <strong>só engenheiro ou médico do trabalho</strong> podem assinar (CLT 195).</li>
         <li class="reveal" data-d="3"><span class="ck">✓</span> Toda entrega acompanhada de <strong>ART</strong> — validade legal garantida.</li>
         <li class="reveal" data-d="4"><span class="ck">✓</span> Atendimento ágil em <strong>Curitiba e RMC</strong>, com retorno em até 24h.</li>
@@ -376,7 +324,7 @@ footer b{color:var(--paper);font-family:var(--head)}
       <div class="reg"><span>Especialização</span><b>Eng. Segurança do Trabalho</b></div>
       <div class="reg"><span>Base legal</span><b>CLT Art. 195</b></div>
       <div class="reg"><span>Atuação</span><b>Curitiba + RMC</b></div>
-      <div class="reg"><span>Responsável técnico</span><b>Ginmaique dos Reis</b></div>
+      <div class="reg"><span>ART</span><b>Em toda entrega</b></div>
     </div>
   </div>
 </section>
@@ -387,7 +335,7 @@ footer b{color:var(--paper);font-family:var(--head)}
     <div class="sec-tag reveal">Como funciona</div>
     <h2 class="sec-title reveal">Do primeiro contato ao laudo na sua mão.</h2>
     <div class="steps">
-      <div class="step reveal" data-d="1"><h4>Contato</h4><p>Você fala comigo pelo WhatsApp ou formulário. Entendo a necessidade.</p></div>
+      <div class="step reveal" data-d="1"><h4>Contato</h4><p>Você chama no WhatsApp ou envia o formulário. Entendemos a necessidade.</p></div>
       <div class="step reveal" data-d="2"><h4>Orçamento</h4><p>Proposta clara em até 24h, com escopo, prazo e ART inclusa.</p></div>
       <div class="step reveal" data-d="3"><h4>Visita técnica</h4><p>Avaliação e medições no local com equipamentos calibrados.</p></div>
       <div class="step reveal" data-d="4"><h4>Laudo + ART</h4><p>Documento assinado, pronto pro e-Social e para a fiscalização.</p></div>
@@ -424,7 +372,7 @@ footer b{color:var(--paper);font-family:var(--head)}
       <div class="lead-copy">
         <h2>Peça seu orçamento</h2>
         <div class="lead-copy">
-          <p>Preencha os campos e seu pedido vai direto pro meu WhatsApp já organizado. Respondo rápido, com proposta clara e sem compromisso.</p>
+          <p>Preencha os campos e seu pedido chega direto no nosso WhatsApp, já organizado. Resposta rápida, proposta clara e sem compromisso.</p>
           <p class="resp">⏱ Retorno em até 24h úteis.</p>
         </div>
       </div>
@@ -472,18 +420,17 @@ footer b{color:var(--paper);font-family:var(--head)}
     <div class="foot-grid">
       <div>
         <b>SOTERIA</b> — Segurança do Trabalho<br>
-        Resp. Técnico: Eng. Ginmaique dos Reis · CREA-PR 208582/D
+        Engenharia de Segurança do Trabalho · CREA-PR 208582/D
       </div>
       <div>
         WhatsApp / Tel: (41) 98505-8491<br>
-        E-mail: {{EMAIL}}<br>
         Curitiba e Região Metropolitana — PR
       </div>
     </div>
     <p class="disclaimer">
       Serviços de engenharia de segurança do trabalho prestados sob responsabilidade técnica do profissional registrado no CREA-PR, com emissão de ART.
       Este site tem caráter informativo; os resultados de cada laudo dependem da avaliação técnica das condições reais de cada ambiente de trabalho.
-      © SOTERIA Segurança do Trabalho — Resp. Téc. Eng. Ginmaique dos Reis, CREA-PR 208582/D. Todos os direitos reservados.
+      © SOTERIA Segurança do Trabalho · CREA-PR 208582/D. Todos os direitos reservados.
     </p>
   </div>
 </footer>
