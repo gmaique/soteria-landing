@@ -93,7 +93,11 @@ section{position:relative;z-index:2}
 .pain-card p{color:var(--text-2);font-size:.9rem;font-weight:300}
 
 /* ============ SERVIÇOS (branco) ============ */
-.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:44px;border:1px solid var(--border)}
+.serv-guia{margin-top:28px;background:var(--layer);border-left:3px solid var(--accent);padding:18px 22px;max-width:64ch}
+.serv-guia p{color:var(--text-2);font-weight:300;font-size:.95rem;line-height:1.6;margin:0}
+.serv-guia strong{font-weight:500;color:var(--text)}
+.serv-guia a{color:var(--accent-text);text-decoration:underline}
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:24px;border:1px solid var(--border)}
 .serv{background:var(--bg);border:none;border-radius:0;padding:32px 28px;position:relative;overflow:hidden;transition:background .11s}
 .serv::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s}
 .serv:hover{background:var(--layer)}
@@ -313,10 +317,10 @@ footer b{color:var(--text);font-weight:600}
   <div class="wrap">
     <div class="sec-tag reveal">Serviços</div>
     <h2 class="sec-title reveal">Tudo que sua empresa precisa em segurança do trabalho.</h2>
-    <p class="reveal" style="color:var(--text-2);font-weight:300;max-width:60ch;margin-top:-8px;margin-bottom:8px">
-      <strong style="font-weight:500;color:var(--text)">Não sabe do que precisa? A maioria não sabe — e tudo bem.</strong>
-      Loja e escritório quase sempre é só PGR e PCMSO. Indústria, obra, cozinha e clínica entram com os laudos, conforme a medição no local. No diagnóstico grátis nós dizemos o que o seu caso exige — sem empurrar pacote.
-    </p>
+    <div class="serv-guia reveal" data-d="1">
+      <p><strong>Não sabe do que precisa? A maioria não sabe — e tudo bem.</strong>
+      Loja e escritório quase sempre é só PGR e PCMSO. Indústria, obra, cozinha e clínica entram com os laudos, conforme a medição no local. No <a href="diagnostico.html">diagnóstico grátis</a> nós dizemos o que o seu caso exige — sem empurrar pacote.</p>
+    </div>
     <div class="serv-grid">
       <div class="serv exclusive reveal" data-d="1">
         <div class="num">/ 01</div>
