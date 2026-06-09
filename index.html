@@ -156,6 +156,21 @@ footer b{color:var(--text);font-weight:600}
 .fab:hover{transform:scale(1.06)}
 .fab svg{width:28px;height:28px}
 
+/* ============ LAUDO MEDIDO × GABINETE ============ */
+.medido{background:var(--layer)}
+.medido-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);margin-top:36px;background:#fff}
+.medido-grid>div{padding:28px 30px}
+.medido-grid .ruim{background:#fcfcfc;border-right:1px solid var(--border)}
+.medido-grid h3{font-weight:600;font-size:1.05rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.medido-grid .ruim h3{color:var(--danger)}
+.medido-grid .bom h3{color:var(--accent-d, var(--accent-text))}
+.medido-grid ul{list-style:none;display:grid;gap:9px}
+.medido-grid li{font-size:.88rem;color:var(--text-2);font-weight:300;padding-left:22px;position:relative;line-height:1.5}
+.medido-grid .ruim li::before{content:"✕";position:absolute;left:0;color:var(--danger);font-weight:600}
+.medido-grid .bom li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:600}
+.medido-grid li strong{font-weight:500;color:var(--text)}
+.medido-nota{font-size:.8rem;color:var(--helper);margin-top:16px;max-width:64ch}
+
 /* ============ DIAGNÓSTICO (banner) ============ */
 .diag-card{background:var(--layer);border:none;border-left:4px solid var(--accent);border-radius:0;padding:44px 48px;display:flex;align-items:center;gap:40px;flex-wrap:wrap}
 .diag-card .txt{flex:1;min-width:260px}
@@ -399,6 +414,42 @@ footer b{color:var(--text);font-weight:600}
       <div class="step reveal" data-d="3"><h4>Visita técnica</h4><p>Nós vamos ao seu local ver onde a sua equipe corre risco e medimos com equipamento calibrado — e já orientamos o que dá pra melhorar na hora.</p></div>
       <div class="step reveal" data-d="4"><h4>Laudo + ART</h4><p>Documento assinado, pronto pro eSocial e pra fiscalização.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- LAUDO MEDIDO × GABINETE -->
+<section class="sec-pad medido">
+  <div class="wrap">
+    <div class="sec-tag reveal">Laudo que segura na fiscalização</div>
+    <h2 class="sec-title reveal">Cuidado com laudo feito à distância.</h2>
+    <p class="reveal" style="color:var(--text-2);font-weight:300;max-width:62ch;margin-top:12px">
+      Insalubridade, periculosidade e LTCAT <strong style="font-weight:500;color:var(--text)">exigem medição no local</strong>,
+      com equipamento calibrado (IN INSS 128/2022 · NR-15 · CLT art. 195). Laudo sem medição é o que a fiscalização e a Justiça derrubam.
+    </p>
+    <div class="medido-grid">
+      <div class="ruim reveal" data-d="1">
+        <h3>✕ Laudo de gabinete (à distância)</h3>
+        <ul>
+          <li>Diz que "tem ruído" <strong>sem informar a intensidade medida</strong> nem o equipamento</li>
+          <li>Sem comprovação técnica → <strong>cai na fiscalização e em ação trabalhista</strong></li>
+          <li>Pode <strong>negar a aposentadoria especial</strong> do funcionário</li>
+          <li>O INSS faz vistoria própria quando o laudo é "lacunoso ou duvidoso"</li>
+        </ul>
+      </div>
+      <div class="bom reveal" data-d="2">
+        <h3>✓ Laudo medido no local (Soteria)</h3>
+        <ul>
+          <li>Engenheiro <strong>vai na sua empresa</strong> e mede de verdade (dosímetro, IBUTG, coleta)</li>
+          <li>Intensidade, método e equipamento <strong>registrados</strong> — prova que segura</li>
+          <li>Assinado <strong>com ART</strong>, por quem responde pelo documento</li>
+          <li>Sustenta o eSocial, a defesa em juízo e a aposentadoria</li>
+        </ul>
+      </div>
+    </div>
+    <p class="medido-nota reveal" data-d="2">
+      Plataforma nacional entrega conveniência. Aqui você tem <strong>validade</strong>: o laudo é feito por um engenheiro
+      que pisa no seu chão, em Curitiba e RMC — não por uma central a distância.
+    </p>
   </div>
 </section>
 
