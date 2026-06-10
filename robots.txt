@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /app-demo/
+
+Sitemap: https://www.soteriasst.com.br/sitemap.xml
