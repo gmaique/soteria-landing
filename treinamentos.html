@@ -70,7 +70,9 @@ h1 .hl{color:var(--accent);font-weight:400}
 
 .lessons{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:32px}
 .lesson{background:#fff;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:start;padding:20px 22px;transition:background .11s}
+button.lesson{font:inherit;text-align:left;border:none;width:100%;cursor:pointer;color:inherit}
 .lesson:hover{background:#fafafa}
+.lesson.cur{background:#fafafa;box-shadow:inset 3px 0 0 var(--accent)}
 .lesson .ln{font-family:var(--mono);color:var(--accent);font-size:.82rem;padding-top:2px}
 .lesson h4{font-weight:500;font-size:1rem}
 .lesson p{color:var(--text-2);font-size:.87rem;font-weight:300;margin-top:3px;max-width:70ch}
@@ -131,58 +133,58 @@ footer b{color:var(--text)}
     <p class="track-sub">Como ler sua nota, manter os documentos em dia e nunca ser pego de surpresa por um vencimento ou pelo eSocial.</p>
 
     <div class="player-wrap">
-      <video class="player" controls preload="none" poster="vid/painel-poster.jpg">
-        <source src="vid/painel.mp4" type="video/mp4">
-        <track default kind="captions" srclang="pt" label="Português" src="vid/painel.vtt">
-        Seu navegador não suporta vídeo. <a href="vid/painel.mp4">Baixe o vídeo</a>.
+      <video id="player" class="player" controls preload="metadata" poster="vid/painel-poster.jpg">
+        <source id="psrc" src="vid/painel.mp4" type="video/mp4">
+        <track id="ptrack" default kind="captions" srclang="pt" label="Português" src="vid/painel.vtt">
+        Seu navegador não suporta vídeo.
       </video>
       <div class="player-cap">
-        <span>Aula 1 — Entenda o seu painel de conformidade</span>
-        <span>30s · legendado</span>
+        <span id="pcap">Aula 1 — Entenda o seu painel de conformidade</span>
+        <span>legendado · ative as legendas no ▢ do player</span>
       </div>
     </div>
 
-    <div class="lessons">
-      <div class="lesson">
+    <div class="lessons" id="playlist">
+      <button class="lesson cur" data-mp4="vid/painel.mp4" data-vtt="vid/painel.vtt" data-poster="vid/painel-poster.jpg" data-cap="Aula 1 — Entenda o seu painel de conformidade">
         <div class="ln">01</div>
         <div>
           <h4>Entenda o seu painel de conformidade</h4>
           <p>O que a nota significa, como ela é calculada e o que o verde/amarelo/vermelho querem dizer. As pendências já vêm em ordem do que resolver primeiro.</p>
         </div>
-        <span class="tag on">▶ assista acima</span>
-      </div>
-      <div class="lesson">
+        <span class="tag on">▶ tocando</span>
+      </button>
+      <button class="lesson" data-mp4="vid/documentos.mp4" data-vtt="vid/documentos.vtt" data-poster="vid/documentos-poster.jpg" data-cap="Aula 2 — Adicionar e renovar documentos">
         <div class="ln">02</div>
         <div>
           <h4>Adicionar e renovar documentos</h4>
-          <p>Cadastre PGR, PCMSO, LTCAT e laudos com data de emissão e validade. O painel avisa você por e-mail 60, 30 e 7 dias antes de cada vencimento.</p>
+          <p>Cadastre PGR, PCMSO, LTCAT e laudos com data de emissão e validade. O painel avisa você 60, 30 e 7 dias antes de cada vencimento.</p>
         </div>
-        <span class="tag">vídeo em breve</span>
-      </div>
-      <div class="lesson">
+        <span class="tag">▶ assistir</span>
+      </button>
+      <button class="lesson" data-mp4="vid/funcionarios.mp4" data-vtt="vid/funcionarios.vtt" data-poster="vid/funcionarios-poster.jpg" data-cap="Aula 3 — Funcionários: ASO, treinamentos e EPIs">
         <div class="ln">03</div>
         <div>
           <h4>Funcionários: ASO, treinamentos e EPIs</h4>
           <p>Cada pessoa tem uma ficha com exame admissional/periódico, treinamentos de NR e entrega de EPI. O semáforo mostra quem está em dia e quem precisa de ação.</p>
         </div>
-        <span class="tag">vídeo em breve</span>
-      </div>
-      <div class="lesson">
+        <span class="tag">▶ assistir</span>
+      </button>
+      <button class="lesson" data-mp4="vid/esocial.mp4" data-vtt="vid/esocial.vtt" data-poster="vid/esocial-poster.jpg" data-cap="Aula 4 — Checagem do eSocial">
         <div class="ln">04</div>
         <div>
           <h4>Checagem do eSocial</h4>
           <p>O painel mostra o que o cruzamento do eSocial apontaria hoje — antes de virar notificação. Você compartilha a tela com seu contador e resolve junto.</p>
         </div>
-        <span class="tag">vídeo em breve</span>
-      </div>
-      <div class="lesson">
+        <span class="tag">▶ assistir</span>
+      </button>
+      <button class="lesson" data-mp4="vid/dossie.mp4" data-vtt="vid/dossie.vtt" data-poster="vid/dossie-poster.jpg" data-cap="Aula 5 — Gerar o dossiê em PDF">
         <div class="ln">05</div>
         <div>
           <h4>Gerar o dossiê em PDF</h4>
           <p>Um clique gera um relatório completo da sua situação de conformidade — pronto pra mostrar numa fiscalização, auditoria ou pro seu contador.</p>
         </div>
-        <span class="tag">vídeo em breve</span>
-      </div>
+        <span class="tag">▶ assistir</span>
+      </button>
     </div>
   </div>
 </section>
@@ -295,6 +297,38 @@ const WHATS = "5541985058491";
 const msg = "Olá! Vim pela Central de Treinamento da Soteria e tenho uma dúvida.";
 const link = `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`;
 ['topWa','finalWa','fabWa'].forEach(id=>{const el=document.getElementById(id); if(el) el.href=link;});
+
+/* === playlist de aulas === */
+(function(){
+  const player = document.getElementById('player');
+  if (!player) return;
+  const src = document.getElementById('psrc');
+  const cap = document.getElementById('pcap');
+  const wrap = document.querySelector('.player-wrap');
+  document.querySelectorAll('#playlist .lesson').forEach((b)=>{
+    b.addEventListener('click', ()=>{
+      document.querySelectorAll('#playlist .lesson').forEach((x)=>{
+        x.classList.remove('cur');
+        const t = x.querySelector('.tag'); t.classList.remove('on'); t.textContent='▶ assistir';
+      });
+      b.classList.add('cur');
+      const t = b.querySelector('.tag'); t.classList.add('on'); t.textContent='▶ tocando';
+      // troca o vídeo
+      src.src = b.dataset.mp4;
+      player.setAttribute('poster', b.dataset.poster);
+      // recria a faixa de legenda
+      const old = document.getElementById('ptrack'); if (old) old.remove();
+      const tr = document.createElement('track');
+      tr.id='ptrack'; tr.kind='captions'; tr.srclang='pt'; tr.label='Português'; tr.default=true; tr.src=b.dataset.vtt;
+      player.appendChild(tr);
+      cap.textContent = b.dataset.cap;
+      player.load();
+      try { player.textTracks[0].mode='showing'; } catch(e){}
+      const p = player.play(); if (p && p.catch) p.catch(()=>{});
+      wrap.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+})();
 </script>
 </body>
 </html>
