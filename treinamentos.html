@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Central de Treinamento — Soteria Segurança do Trabalho | Curitiba</title>
+<meta name="description" content="Treinamentos em vídeo da Soteria: como usar o painel de conformidade SST, como vender segurança do trabalho como parceiro e como operar o sistema. Curtos e legendados." />
+<link rel="canonical" href="https://www.soteriasst.com.br/treinamentos.html" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="SOTERIA — Segurança do Trabalho" />
+<meta property="og:url" content="https://www.soteriasst.com.br/treinamentos.html" />
+<meta property="og:title" content="Central de Treinamento — SOTERIA Segurança do Trabalho" />
+<meta property="og:description" content="Aprenda a usar o painel de conformidade SST, a vender segurança do trabalho e a operar o sistema. Vídeos curtos e legendados." />
+<meta property="og:image" content="https://www.soteriasst.com.br/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Central de Treinamento — SOTERIA Segurança do Trabalho" />
+<meta name="twitter:description" content="Vídeos curtos e legendados: usar o painel, vender SST e operar o sistema." />
+<meta name="twitter:image" content="https://www.soteriasst.com.br/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--layer:#f4f4f4;--layer-2:#e8e8e8;--border:#e0e0e0;--border-strong:#8d8d8d;
+  --text:#161616;--text-2:#525252;--helper:#6f6f6f;
+  --accent:#1fa84f;--accent-hover:#168442;--accent-light:#defbe6;--accent-text:#0e6027;
+  --signal:#da1e28;--green:#24a148;
+  --body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-weight:400;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{width:38px;height:38px;flex:none;background:none;display:grid;place-items:center}
+.brand b{font-weight:600;letter-spacing:.01em;font-size:.98rem;display:block;line-height:1.15}
+.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase}
+.btn{font-family:var(--body);font-weight:400;font-size:.875rem;height:48px;padding:0 20px;cursor:pointer;border:none;border-radius:0;display:inline-flex;align-items:center;gap:24px;transition:background .11s,border-color .11s,color .11s;letter-spacing:.01em}
+.btn-wa{background:var(--accent);color:#fff;font-weight:500}
+.btn-wa:hover{background:var(--accent-hover)}
+.btn-ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn-ghost:hover{background:var(--accent);color:#fff}
+.nav .btn{height:40px;padding:0 16px}
+
+.hero{position:relative;padding:72px 0 40px;text-align:center;border-bottom:1px solid var(--border)}
+.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+h1{font-weight:300;font-size:clamp(2.1rem,4.8vw,3.2rem);line-height:1.14;letter-spacing:-.01em}
+h1 .hl{color:var(--accent);font-weight:400}
+.hero p{font-size:1.05rem;color:var(--text-2);font-weight:300;max-width:60ch;margin:22px auto 0}
+.hero .meta{font-family:var(--mono);font-size:.74rem;color:var(--helper);margin-top:18px;letter-spacing:.03em}
+
+.toc{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.toc a{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--border);padding:9px 14px;color:var(--text-2);transition:.11s}
+.toc a:hover{border-color:var(--accent);color:var(--accent-text);background:var(--accent-light)}
+
+.tsec{padding:64px 0;border-top:1px solid var(--border)}
+.tsec.alt{background:var(--layer)}
+.track-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.track-h{font-weight:300;font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.01em;margin:10px 0 6px}
+.track-sub{color:var(--text-2);font-weight:300;max-width:64ch}
+
+.player-wrap{margin:30px auto 0;max-width:900px}
+.player{width:100%;display:block;border:1px solid var(--border);background:#000;aspect-ratio:16/9}
+.player-cap{font-family:var(--mono);font-size:.74rem;color:var(--helper);margin-top:10px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.lessons{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:32px}
+.lesson{background:#fff;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:start;padding:20px 22px;transition:background .11s}
+.lesson:hover{background:#fafafa}
+.lesson .ln{font-family:var(--mono);color:var(--accent);font-size:.82rem;padding-top:2px}
+.lesson h4{font-weight:500;font-size:1rem}
+.lesson p{color:var(--text-2);font-size:.87rem;font-weight:300;margin-top:3px;max-width:70ch}
+.lesson .tag{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.06em;color:var(--helper);white-space:nowrap;border:1px solid var(--border);padding:5px 9px;align-self:center}
+.lesson .tag.on{color:var(--accent-text);border-color:var(--accent);background:var(--accent-light)}
+
+.final{background:var(--layer);border:none;padding:56px;text-align:center;position:relative;overflow:hidden;margin:64px 0 80px}
+.final::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent)}
+.final h2{font-weight:300;font-size:clamp(1.7rem,2.8vw,2.3rem);letter-spacing:-.01em;line-height:1.15}
+.final p{color:var(--text-2);font-weight:300;margin:14px auto 28px;max-width:48ch}
+.final .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+footer{background:var(--bg);border-top:1px solid var(--border);padding:36px 0;font-size:.8rem;color:var(--text-2);text-align:center;font-family:var(--mono)}
+footer b{color:var(--text)}
+.disclaimer{max-width:780px;margin:16px auto 0;font-size:.7rem;line-height:1.7;color:var(--helper)}
+
+.fab{position:fixed;bottom:24px;right:24px;z-index:60;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.22);transition:transform .15s}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:28px;height:28px}
+
+@media(max-width:760px){.lesson{grid-template-columns:auto 1fr}.lesson .tag{grid-column:2;justify-self:start;margin-top:6px}.final{padding:36px 24px}.nav{height:58px}.brand span{font-size:.54rem;white-space:nowrap}.brand .mark{width:32px;height:32px}.nav .btn{height:36px;font-size:.8rem;padding:0 14px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <div class="mark"><svg viewBox="0 0 100 100" style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" aria-label="Soteria"><circle cx="50" cy="50" r="48" fill="#1fa84f"/><g fill="#fff"><rect x="44" y="20" width="12" height="60" rx="2"/><rect x="20" y="44" width="60" height="12" rx="2"/></g><g transform="translate(50,53) scale(0.44) translate(-50,-50)"><path d="M25 60 C25 39 36 29 50 29 C64 29 75 39 75 60 Z" fill="#ffb200"/><rect x="15" y="60" width="70" height="9" rx="4.5" fill="#ffb200"/><rect x="46" y="22" width="8" height="9" rx="2.5" fill="#ffb200"/><g stroke="#e89400" stroke-width="3.6" stroke-linecap="round"><line x1="50" y1="32" x2="50" y2="58"/><line x1="38" y1="37" x2="38" y2="58"/><line x1="62" y1="37" x2="62" y2="58"/></g></g></svg></div>
+      <div>
+        <b>SOTERIA</b>
+        <span>Segurança do Trabalho · CREA-PR 208582/D</span>
+      </div>
+    </a>
+    <a class="btn btn-wa" href="#contato" id="topWa">Falar no WhatsApp</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Central de Treinamento</div>
+    <h1>Aprenda a usar — e a <span class="hl">vender</span> — segurança do trabalho.</h1>
+    <p>Vídeos curtos e diretos, com legenda, mais o passo a passo escrito. Tudo o que você precisa pra tirar o máximo do painel Soteria e, se quiser, indicar e ganhar com isso.</p>
+    <p class="meta">▷ vídeos legendados · sem enrolação · atualizados conforme o sistema evolui</p>
+    <div class="toc">
+      <a href="#empresa">Para a sua empresa</a>
+      <a href="#parceiros">Para parceiros</a>
+      <a href="#equipe">Para a equipe</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRILHA 1 — EMPRESA / PAINEL ===== -->
+<section class="tsec" id="empresa">
+  <div class="wrap">
+    <div class="track-tag">Trilha 1 · Para a sua empresa</div>
+    <h2 class="track-h">Usar o painel de conformidade</h2>
+    <p class="track-sub">Como ler sua nota, manter os documentos em dia e nunca ser pego de surpresa por um vencimento ou pelo eSocial.</p>
+
+    <div class="player-wrap">
+      <video class="player" controls preload="none" poster="vid/painel-poster.jpg">
+        <source src="vid/painel.mp4" type="video/mp4">
+        <track default kind="captions" srclang="pt" label="Português" src="vid/painel.vtt">
+        Seu navegador não suporta vídeo. <a href="vid/painel.mp4">Baixe o vídeo</a>.
+      </video>
+      <div class="player-cap">
+        <span>Aula 1 — Entenda o seu painel de conformidade</span>
+        <span>30s · legendado</span>
+      </div>
+    </div>
+
+    <div class="lessons">
+      <div class="lesson">
+        <div class="ln">01</div>
+        <div>
+          <h4>Entenda o seu painel de conformidade</h4>
+          <p>O que a nota significa, como ela é calculada e o que o verde/amarelo/vermelho querem dizer. As pendências já vêm em ordem do que resolver primeiro.</p>
+        </div>
+        <span class="tag on">▶ assista acima</span>
+      </div>
+      <div class="lesson">
+        <div class="ln">02</div>
+        <div>
+          <h4>Adicionar e renovar documentos</h4>
+          <p>Cadastre PGR, PCMSO, LTCAT e laudos com data de emissão e validade. O painel avisa você por e-mail 60, 30 e 7 dias antes de cada vencimento.</p>
+        </div>
+        <span class="tag">vídeo em breve</span>
+      </div>
+      <div class="lesson">
+        <div class="ln">03</div>
+        <div>
+          <h4>Funcionários: ASO, treinamentos e EPIs</h4>
+          <p>Cada pessoa tem uma ficha com exame admissional/periódico, treinamentos de NR e entrega de EPI. O semáforo mostra quem está em dia e quem precisa de ação.</p>
+        </div>
+        <span class="tag">vídeo em breve</span>
+      </div>
+      <div class="lesson">
+        <div class="ln">04</div>
+        <div>
+          <h4>Checagem do eSocial</h4>
+          <p>O painel mostra o que o cruzamento do eSocial apontaria hoje — antes de virar notificação. Você compartilha a tela com seu contador e resolve junto.</p>
+        </div>
+        <span class="tag">vídeo em breve</span>
+      </div>
+      <div class="lesson">
+        <div class="ln">05</div>
+        <div>
+          <h4>Gerar o dossiê em PDF</h4>
+          <p>Um clique gera um relatório completo da sua situação de conformidade — pronto pra mostrar numa fiscalização, auditoria ou pro seu contador.</p>
+        </div>
+        <span class="tag">vídeo em breve</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRILHA 2 — PARCEIROS / VENDAS ===== -->
+<section class="tsec alt" id="parceiros">
+  <div class="wrap">
+    <div class="track-tag">Trilha 2 · Para parceiros</div>
+    <h2 class="track-h">Vender segurança do trabalho</h2>
+    <p class="track-sub">É contador, despachante ou tem rede de empresas? Aprenda a indicar SST do jeito certo — sem precisar entender de engenharia e sem bater de porta em porta. Comissão de até 10%, inclusive nas renovações.</p>
+
+    <div class="lessons">
+      <div class="lesson">
+        <div class="ln">01</div>
+        <div>
+          <h4>O que é SST, em 1 minuto</h4>
+          <p>Toda empresa com funcionário CLT é obrigada por lei a ter PGR, PCMSO e os laudos do seu risco. Quem não tem leva multa e processo. Você não precisa saber fazer — precisa saber reconhecer quem precisa.</p>
+        </div>
+        <span class="tag">guia escrito</span>
+      </div>
+      <div class="lesson">
+        <div class="ln">02</div>
+        <div>
+          <h4>Como reconhecer um cliente</h4>
+          <p>Tem CLT e nunca fez PGR? Abriu CNPJ agora? Indústria, obra, oficina, clínica, transporte? Recebeu notificação do eSocial? Cada um desses é uma indicação certeira pra você.</p>
+        </div>
+        <span class="tag">guia escrito</span>
+      </div>
+      <div class="lesson">
+        <div class="ln">03</div>
+        <div>
+          <h4>A abordagem (por mensagem, sem corpo a corpo)</h4>
+          <p>Um modelo de mensagem pronto pra mandar no WhatsApp, e as 3 objeções mais comuns ("é caro", "já tenho", "depois eu vejo") com a resposta certa pra cada uma.</p>
+        </div>
+        <span class="tag">guia escrito</span>
+      </div>
+      <div class="lesson">
+        <div class="ln">04</div>
+        <div>
+          <h4>Comissão e como funciona a parceria</h4>
+          <p>Você indica, a Soteria executa com ART e responsabilidade técnica, e você recebe até 10% — de novo a cada renovação. Tudo por escrito no acordo de parceria.</p>
+        </div>
+        <span class="tag">guia escrito</span>
+      </div>
+    </div>
+    <p style="margin-top:22px"><a class="btn btn-ghost" href="index.html#parceiros">Quero ser parceiro →</a></p>
+  </div>
+</section>
+
+<!-- ===== TRILHA 3 — EQUIPE / ERP ===== -->
+<section class="tsec" id="equipe">
+  <div class="wrap">
+    <div class="track-tag">Trilha 3 · Para a equipe Soteria</div>
+    <h2 class="track-h">Operar o sistema</h2>
+    <p class="track-sub">Para quem gerencia a carteira de clientes dentro do sistema. Estes treinamentos ficam dentro do painel, depois do login.</p>
+
+    <div class="lessons">
+      <div class="lesson">
+        <div class="ln">01</div>
+        <div><h4>Cadastrar um cliente novo</h4><p>Criar a empresa, definir setor, nº de funcionários e exposição — o sistema já calcula o que a lei exige dela.</p></div>
+        <span class="tag">no sistema</span>
+      </div>
+      <div class="lesson">
+        <div class="ln">02</div>
+        <div><h4>Liberar o acesso do cliente</h4><p>Definir e-mail e senha pra empresa acompanhar o próprio painel — com um clique em "Acesso do cliente".</p></div>
+        <span class="tag">no sistema</span>
+      </div>
+      <div class="lesson">
+        <div class="ln">03</div>
+        <div><h4>Gerenciar a carteira e os vencimentos</h4><p>Ver quem está em alerta, o que vence nos próximos 30 dias e priorizar os atendimentos da semana.</p></div>
+        <span class="tag">no sistema</span>
+      </div>
+      <div class="lesson">
+        <div class="ln">04</div>
+        <div><h4>CRM de leads e parceiros</h4><p>Acompanhar contatos, registrar interações e controlar as indicações dos parceiros.</p></div>
+        <span class="tag">no sistema</span>
+      </div>
+    </div>
+    <p style="margin-top:22px"><a class="btn btn-ghost" href="https://app.soteriasst.com.br/#/login">Entrar no sistema →</a></p>
+  </div>
+</section>
+
+<section class="wrap" id="contato">
+  <div class="final">
+    <h2>Ficou com dúvida?</h2>
+    <p>Fale com a Soteria — respondemos rápido e te ajudamos a tirar o máximo do painel.</p>
+    <div class="row">
+      <a class="btn btn-wa" id="finalWa" href="#" style="font-size:1rem;padding:16px 28px">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+        Falar no WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="https://app.soteriasst.com.br/#/exemplo">Testar a demonstração</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>SOTERIA</b> — Segurança do Trabalho · CREA-PR 208582/D · Curitiba/PR
+    <p class="disclaimer">Conteúdo de treinamento orientativo. Os serviços técnicos (PGR, laudos, LTCAT, perícia) são executados sob responsabilidade técnica do profissional registrado no CREA-PR, com emissão de ART. <a href="privacidade.html" style="text-decoration:underline">Política de Privacidade</a>.</p>
+  </div>
+</footer>
+
+<a class="fab" id="fabWa" href="#" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+</a>
+
+<script>
+const WHATS = "5541985058491";
+const msg = "Olá! Vim pela Central de Treinamento da Soteria e tenho uma dúvida.";
+const link = `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`;
+['topWa','finalWa','fabWa'].forEach(id=>{const el=document.getElementById(id); if(el) el.href=link;});
+</script>
+</body>
+</html>
