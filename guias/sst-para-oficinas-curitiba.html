@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Todo mecânico tem direito a insalubridade?","acceptedAnswer":{"@type":"Answer","text":"Não automaticamente. Depende da exposição medida: ruído acima de 85 dB(A) na jornada, contato com hidrocarbonetos sem proteção adequada. O laudo evita os dois erros caros: pagar sem dever ou ser condenado a pagar retroativo em dobro."}},{"@type":"Question","name":"EPI elimina o adicional de insalubridade?","acceptedAnswer":{"@type":"Answer","text":"Pode neutralizar, se comprovadamente eficaz e com uso fiscalizado (Súmula 80 do TST) — mas pra ruído o STF entende que o EPI nem sempre afasta o direito. É análise técnica caso a caso, função do laudo."}},{"@type":"Question","name":"Oficina com 2 funcionários precisa disso tudo?","acceptedAnswer":{"@type":"Answer","text":"Precisa de PGR, ASOs e EPIs documentados desde o primeiro CLT. O custo de regularizar é uma fração de uma única condenação por insalubridade não paga."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Todo mecânico tem direito a insalubridade?","acceptedAnswer":{"@type":"Answer","text":"Não automaticamente. Depende da exposição medida: ruído acima de 85 dB(A) na jornada, contato com hidrocarbonetos sem proteção adequada. O laudo evita os dois erros caros: pagar sem dever ou ser condenado a pagar retroativo com reflexos (13º, férias, FGTS) e juros."}},{"@type":"Question","name":"EPI elimina o adicional de insalubridade?","acceptedAnswer":{"@type":"Answer","text":"Pode neutralizar, se comprovadamente eficaz e com uso fiscalizado (Súmula 80 do TST) — mas pra ruído o STF entende que o EPI nem sempre afasta o direito. É análise técnica caso a caso, função do laudo."}},{"@type":"Question","name":"Oficina com 2 funcionários precisa disso tudo?","acceptedAnswer":{"@type":"Answer","text":"Precisa de PGR, ASOs e EPIs documentados desde o primeiro CLT. O custo de regularizar é uma fração de uma única condenação por insalubridade não paga."}}]}</script>
 <style>
 :root{--bg:#fff;--layer:#f4f4f4;--border:#e0e0e0;--border-strong:#8d8d8d;--text:#161616;--text-2:#525252;--helper:#6f6f6f;--accent:#1fa84f;--accent-hover:#168442;--accent-light:#defbe6;--accent-text:#0e6027;--green:#24a148;--body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -25,12 +25,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:
 a{color:inherit;text-decoration:none}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 header .wrap{max-width:1180px}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:12px;flex:none}
-.brand .mark{width:38px;height:38px;display:grid;place-items:center}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand>div{min-width:0}
+.brand .mark{width:38px;height:38px;flex:none;display:grid;place-items:center}
 .brand b{font-weight:600;font-size:.98rem;display:block;line-height:1.15;white-space:nowrap}
-.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.btn{font-family:var(--body);font-size:.875rem;height:40px;padding:0 16px;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.11s;letter-spacing:.01em}
+.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;display:block;overflow:hidden;text-overflow:ellipsis}
+.btn{font-family:var(--body);font-size:.875rem;height:40px;padding:0 16px;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.11s;letter-spacing:.01em;white-space:nowrap;flex-shrink:0}
 .btn-wa{background:var(--accent);color:#fff;font-weight:500}.btn-wa:hover{background:var(--accent-hover)}
 .btn-ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}.btn-ghost:hover{background:var(--accent);color:#fff}
 .hero{padding:64px 0 36px;border-bottom:1px solid var(--border)}
@@ -66,12 +67,13 @@ footer{border-top:1px solid var(--border);padding:32px 0;font-size:.78rem;color:
 footer b{color:var(--text)}
 .disclaimer{max-width:760px;margin:14px auto 0;font-size:.68rem;line-height:1.7;color:var(--helper)}
 /* índice */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:20px}
-.cards a{background:#fff;padding:22px;transition:background .11s;display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:20px}
+.cards a{background:#fff;border:1px solid var(--border);padding:22px;transition:background .11s,border-color .11s;display:block}
+.cards a:hover{border-color:var(--accent)}
 .cards a:hover{background:#fafafa}
 .cards b{font-weight:500;display:block}
 .cards span{color:var(--helper);font-size:.8rem;font-family:var(--mono)}
-@media(max-width:700px){.nav{height:58px}.brand .mark{width:32px;height:32px}.brand span{font-size:.54rem}}
+@media(max-width:700px){.nav{height:58px}.brand .mark{width:32px;height:32px}.brand span{font-size:.54rem}.nav .btn{font-size:.78rem;padding:0 12px;height:34px}}
 </style>
 </head>
 <body>
@@ -121,7 +123,7 @@ footer b{color:var(--text)}
   <section class="faq">
     <h2>Perguntas frequentes</h2>
     <dl>
-      <div class="item"><dt>Todo mecânico tem direito a insalubridade?</dt><dd>Não automaticamente. Depende da exposição medida: ruído acima de 85 dB(A) na jornada, contato com hidrocarbonetos sem proteção adequada. O laudo evita os dois erros caros: pagar sem dever ou ser condenado a pagar retroativo em dobro.</dd></div>
+      <div class="item"><dt>Todo mecânico tem direito a insalubridade?</dt><dd>Não automaticamente. Depende da exposição medida: ruído acima de 85 dB(A) na jornada, contato com hidrocarbonetos sem proteção adequada. O laudo evita os dois erros caros: pagar sem dever ou ser condenado a pagar retroativo com reflexos (13º, férias, FGTS) e juros.</dd></div>
       <div class="item"><dt>EPI elimina o adicional de insalubridade?</dt><dd>Pode neutralizar, se comprovadamente eficaz e com uso fiscalizado (Súmula 80 do TST) — mas pra ruído o STF entende que o EPI nem sempre afasta o direito. É análise técnica caso a caso, função do laudo.</dd></div>
       <div class="item"><dt>Oficina com 2 funcionários precisa disso tudo?</dt><dd>Precisa de PGR, ASOs e EPIs documentados desde o primeiro CLT. O custo de regularizar é uma fração de uma única condenação por insalubridade não paga.</dd></div>
     </dl>

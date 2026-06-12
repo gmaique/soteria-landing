@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cada obra precisa do seu próprio PGR?","acceptedAnswer":{"@type":"Answer","text":"O PGR é da empresa, mas precisa contemplar as condições reais de cada canteiro — na prática, obra nova exige atualização do inventário de riscos e do plano de ação. PGR genérico de prateleira não passa em fiscalização."}},{"@type":"Question","name":"Subcontratados (empreiteiros) são responsabilidade minha?","acceptedAnswer":{"@type":"Answer","text":"A contratante responde solidariamente pelas condições de segurança no canteiro. Exigir e conferir a documentação dos terceiros faz parte do seu gerenciamento de risco."}},{"@type":"Question","name":"Pedreiro tem insalubridade?","acceptedAnswer":{"@type":"Answer","text":"Depende da exposição medida: cimento (álcalis), poeira, ruído. Não é automático por função — é a avaliação técnica no local que caracteriza, e isso protege a empresa de pagar adicional indevido."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cada obra precisa do seu próprio PGR?","acceptedAnswer":{"@type":"Answer","text":"O PGR é da empresa, mas precisa contemplar as condições reais de cada canteiro — na prática, obra nova exige atualização do inventário de riscos e do plano de ação. PGR genérico de prateleira não passa em fiscalização."}},{"@type":"Question","name":"Subcontratados (empreiteiros) são responsabilidade minha?","acceptedAnswer":{"@type":"Answer","text":"A contratante pode ser responsabilizada — inclusive solidariamente, em caso de acidente — pelas condições de segurança no canteiro. Exigir e conferir a documentação dos terceiros faz parte do seu gerenciamento de risco."}},{"@type":"Question","name":"Pedreiro tem insalubridade?","acceptedAnswer":{"@type":"Answer","text":"Depende da exposição medida: cimento (álcalis), poeira, ruído. Não é automático por função — é a avaliação técnica no local que caracteriza, e isso protege a empresa de pagar adicional indevido."}}]}</script>
 <style>
 :root{--bg:#fff;--layer:#f4f4f4;--border:#e0e0e0;--border-strong:#8d8d8d;--text:#161616;--text-2:#525252;--helper:#6f6f6f;--accent:#1fa84f;--accent-hover:#168442;--accent-light:#defbe6;--accent-text:#0e6027;--green:#24a148;--body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -25,12 +25,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:
 a{color:inherit;text-decoration:none}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 header .wrap{max-width:1180px}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:12px;flex:none}
-.brand .mark{width:38px;height:38px;display:grid;place-items:center}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand>div{min-width:0}
+.brand .mark{width:38px;height:38px;flex:none;display:grid;place-items:center}
 .brand b{font-weight:600;font-size:.98rem;display:block;line-height:1.15;white-space:nowrap}
-.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.btn{font-family:var(--body);font-size:.875rem;height:40px;padding:0 16px;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.11s;letter-spacing:.01em}
+.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;display:block;overflow:hidden;text-overflow:ellipsis}
+.btn{font-family:var(--body);font-size:.875rem;height:40px;padding:0 16px;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.11s;letter-spacing:.01em;white-space:nowrap;flex-shrink:0}
 .btn-wa{background:var(--accent);color:#fff;font-weight:500}.btn-wa:hover{background:var(--accent-hover)}
 .btn-ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}.btn-ghost:hover{background:var(--accent);color:#fff}
 .hero{padding:64px 0 36px;border-bottom:1px solid var(--border)}
@@ -66,12 +67,13 @@ footer{border-top:1px solid var(--border);padding:32px 0;font-size:.78rem;color:
 footer b{color:var(--text)}
 .disclaimer{max-width:760px;margin:14px auto 0;font-size:.68rem;line-height:1.7;color:var(--helper)}
 /* índice */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:20px}
-.cards a{background:#fff;padding:22px;transition:background .11s;display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:20px}
+.cards a{background:#fff;border:1px solid var(--border);padding:22px;transition:background .11s,border-color .11s;display:block}
+.cards a:hover{border-color:var(--accent)}
 .cards a:hover{background:#fafafa}
 .cards b{font-weight:500;display:block}
 .cards span{color:var(--helper);font-size:.8rem;font-family:var(--mono)}
-@media(max-width:700px){.nav{height:58px}.brand .mark{width:32px;height:32px}.brand span{font-size:.54rem}}
+@media(max-width:700px){.nav{height:58px}.brand .mark{width:32px;height:32px}.brand span{font-size:.54rem}.nav .btn{font-size:.78rem;padding:0 12px;height:34px}}
 </style>
 </head>
 <body>
@@ -89,7 +91,7 @@ footer b{color:var(--text)}
   <section class="hero">
     <div class="kicker">Guia por setor · Curitiba e RMC</div>
     <h1>Segurança do trabalho para <span class='hl'>construção civil</span> em Curitiba</h1>
-    <p class="intro">A construção civil é o setor mais fiscalizado do Paraná — e o que mais registra acidentes graves. Trabalho em altura, máquinas, escavações e eletricidade convivem no mesmo canteiro, e a documentação precisa acompanhar cada obra, não só a empresa.</p>
+    <p class="intro">A construção civil está entre os setores mais fiscalizados do Paraná — e entre os que mais registram acidentes graves. Trabalho em altura, máquinas, escavações e eletricidade convivem no mesmo canteiro, e a documentação precisa acompanhar cada obra, não só a empresa.</p>
   </section>
 
   <section>
@@ -122,7 +124,7 @@ footer b{color:var(--text)}
     <h2>Perguntas frequentes</h2>
     <dl>
       <div class="item"><dt>Cada obra precisa do seu próprio PGR?</dt><dd>O PGR é da empresa, mas precisa contemplar as condições reais de cada canteiro — na prática, obra nova exige atualização do inventário de riscos e do plano de ação. PGR genérico de prateleira não passa em fiscalização.</dd></div>
-      <div class="item"><dt>Subcontratados (empreiteiros) são responsabilidade minha?</dt><dd>A contratante responde solidariamente pelas condições de segurança no canteiro. Exigir e conferir a documentação dos terceiros faz parte do seu gerenciamento de risco.</dd></div>
+      <div class="item"><dt>Subcontratados (empreiteiros) são responsabilidade minha?</dt><dd>A contratante pode ser responsabilizada — inclusive solidariamente, em caso de acidente — pelas condições de segurança no canteiro. Exigir e conferir a documentação dos terceiros faz parte do seu gerenciamento de risco.</dd></div>
       <div class="item"><dt>Pedreiro tem insalubridade?</dt><dd>Depende da exposição medida: cimento (álcalis), poeira, ruído. Não é automático por função — é a avaliação técnica no local que caracteriza, e isso protege a empresa de pagar adicional indevido.</dd></div>
     </dl>
   </section>

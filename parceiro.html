@@ -31,12 +31,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-weight:
 a{color:inherit;text-decoration:none}
 
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:12px;flex:none}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand>div{min-width:0}
 .brand .mark{width:38px;height:38px;flex:none;display:grid;place-items:center}
 .brand b{font-weight:600;font-size:.98rem;display:block;line-height:1.15;white-space:nowrap}
-.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.btn{font-family:var(--body);font-weight:400;font-size:.875rem;height:48px;padding:0 20px;cursor:pointer;border:none;border-radius:0;display:inline-flex;align-items:center;justify-content:center;gap:12px;transition:background .11s,color .11s;letter-spacing:.01em}
+.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;display:block;overflow:hidden;text-overflow:ellipsis}
+.btn{font-family:var(--body);font-weight:400;font-size:.875rem;height:48px;padding:0 20px;cursor:pointer;border:none;border-radius:0;display:inline-flex;align-items:center;justify-content:center;gap:12px;transition:background .11s,color .11s;letter-spacing:.01em;white-space:nowrap}
+.nav .btn{flex-shrink:0}
 .btn-wa{background:var(--accent);color:#fff;font-weight:500}
 .btn-wa:hover{background:var(--accent-hover)}
 .btn-ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
@@ -100,7 +102,7 @@ footer b{color:var(--text)}
         <span>Segurança do Trabalho · CREA-PR 208582/D</span>
       </div>
     </a>
-    <a class="btn btn-ghost" href="index.html">← Voltar ao site</a>
+    <a class="btn btn-ghost" href="index.html">← Voltar</a>
   </div>
 </header>
 
@@ -108,7 +110,7 @@ footer b{color:var(--text)}
   <div class="wrap">
     <div class="kicker">Programa de parceiros</div>
     <h1>Indique segurança do trabalho. <span class="hl">Ganhe até 10%</span> — sem sair da sua mesa.</h1>
-    <p>Feito pra contadores e escritórios: seus clientes com CLT são obrigados por lei a ter PGR e laudos. Você indica, a Soteria executa com engenheiro e ART, e você recebe em cada serviço — inclusive nas renovações.</p>
+    <p>Feito pra contadores e escritórios: seus clientes com CLT têm obrigações legais de segurança do trabalho — do PGR aos laudos, conforme a atividade. Você indica, a Soteria executa com engenheiro e ART, e você recebe em cada serviço — inclusive nas renovações.</p>
   </div>
 </section>
 
@@ -139,7 +141,7 @@ footer b{color:var(--text)}
       <form id="parcForm">
         <input type="text" id="pNome" placeholder="Seu nome" required>
         <input type="text" id="pEsc" placeholder="Escritório / empresa (opcional)">
-        <input type="tel" id="pZap" placeholder="Seu WhatsApp — (41) 9...." required>
+        <input type="tel" id="pZap" placeholder="Seu WhatsApp — (41) 9XXXX-XXXX" required>
         <input type="email" id="pEmail" placeholder="E-mail (opcional)">
         <input type="text" id="pSite" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
         <button type="submit" class="btn btn-wa" id="pBtn">Gerar meu código →</button>

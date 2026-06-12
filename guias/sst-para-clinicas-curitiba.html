@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A recepcionista da clínica tem insalubridade?","acceptedAnswer":{"@type":"Answer","text":"Em regra, não — se ela não tem contato com pacientes em procedimentos nem com material biológico. Mas é o laudo técnico que documenta isso; sem laudo, uma reclamatória trabalhista tende a presumir a exposição."}},{"@type":"Question","name":"Clínica de estética entra nas mesmas regras?","acceptedAnswer":{"@type":"Answer","text":"Se há procedimento invasivo (agulhas, microagulhamento), há risco biológico e a NR-32 orienta os cuidados. Cada caso exige avaliação — é exatamente o que o diagnóstico inicial responde."}},{"@type":"Question","name":"O que é exigido pro eSocial da clínica?","acceptedAnswer":{"@type":"Answer","text":"Os eventos S-2220 (saúde ocupacional) e S-2240 (condições de exposição) precisam bater com o PCMSO e o LTCAT. Inconsistência entre eles é o que gera notificação."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A recepcionista da clínica tem insalubridade?","acceptedAnswer":{"@type":"Answer","text":"Em regra, não — se ela não tem contato com pacientes em procedimentos nem com material biológico. Mas é o laudo técnico que documenta isso; sem laudo, a empresa chega à perícia judicial sem nenhuma prova técnica própria."}},{"@type":"Question","name":"Clínica de estética entra nas mesmas regras?","acceptedAnswer":{"@type":"Answer","text":"Se há procedimento invasivo (agulhas, microagulhamento), há risco biológico e a NR-32 orienta os cuidados. Cada caso exige avaliação — é exatamente o que o diagnóstico inicial responde."}},{"@type":"Question","name":"O que é exigido pro eSocial da clínica?","acceptedAnswer":{"@type":"Answer","text":"Os eventos S-2220 (saúde ocupacional) e S-2240 (condições de exposição) precisam bater com o PCMSO e o LTCAT. Inconsistência entre eles é o que gera notificação."}}]}</script>
 <style>
 :root{--bg:#fff;--layer:#f4f4f4;--border:#e0e0e0;--border-strong:#8d8d8d;--text:#161616;--text-2:#525252;--helper:#6f6f6f;--accent:#1fa84f;--accent-hover:#168442;--accent-light:#defbe6;--accent-text:#0e6027;--green:#24a148;--body:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -25,12 +25,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:
 a{color:inherit;text-decoration:none}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 header .wrap{max-width:1180px}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:12px;flex:none}
-.brand .mark{width:38px;height:38px;display:grid;place-items:center}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand>div{min-width:0}
+.brand .mark{width:38px;height:38px;flex:none;display:grid;place-items:center}
 .brand b{font-weight:600;font-size:.98rem;display:block;line-height:1.15;white-space:nowrap}
-.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.btn{font-family:var(--body);font-size:.875rem;height:40px;padding:0 16px;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.11s;letter-spacing:.01em}
+.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;display:block;overflow:hidden;text-overflow:ellipsis}
+.btn{font-family:var(--body);font-size:.875rem;height:40px;padding:0 16px;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.11s;letter-spacing:.01em;white-space:nowrap;flex-shrink:0}
 .btn-wa{background:var(--accent);color:#fff;font-weight:500}.btn-wa:hover{background:var(--accent-hover)}
 .btn-ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}.btn-ghost:hover{background:var(--accent);color:#fff}
 .hero{padding:64px 0 36px;border-bottom:1px solid var(--border)}
@@ -66,12 +67,13 @@ footer{border-top:1px solid var(--border);padding:32px 0;font-size:.78rem;color:
 footer b{color:var(--text)}
 .disclaimer{max-width:760px;margin:14px auto 0;font-size:.68rem;line-height:1.7;color:var(--helper)}
 /* índice */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:20px}
-.cards a{background:#fff;padding:22px;transition:background .11s;display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:20px}
+.cards a{background:#fff;border:1px solid var(--border);padding:22px;transition:background .11s,border-color .11s;display:block}
+.cards a:hover{border-color:var(--accent)}
 .cards a:hover{background:#fafafa}
 .cards b{font-weight:500;display:block}
 .cards span{color:var(--helper);font-size:.8rem;font-family:var(--mono)}
-@media(max-width:700px){.nav{height:58px}.brand .mark{width:32px;height:32px}.brand span{font-size:.54rem}}
+@media(max-width:700px){.nav{height:58px}.brand .mark{width:32px;height:32px}.brand span{font-size:.54rem}.nav .btn{font-size:.78rem;padding:0 12px;height:34px}}
 </style>
 </head>
 <body>
@@ -96,7 +98,7 @@ footer b{color:var(--text)}
     <h2>O que a lei exige</h2>
     <div class="exige">
       <div><b>PGR com risco biológico (NR-1 + NR-32)</b><p>Contato com pacientes, perfurocortantes e material biológico precisam estar mapeados, com plano de ação.</p></div>
-      <div><b>Laudo de insalubridade (NR-15, Anexo 14)</b><p>Define função a função quem tem exposição a agentes biológicos — e em que grau (10%, 20% ou 40%).</p></div>
+      <div><b>Laudo de insalubridade (NR-15, Anexo 14)</b><p>Define função a função quem tem exposição a agentes biológicos — e em que grau: médio (20%) ou máximo (40%), conforme o Anexo 14.</p></div>
       <div><b>PCMSO com protocolos da NR-32</b><p>Vacinação (hepatite B), condutas pós-acidente com perfurocortante, exames específicos — coordenado por médico do trabalho.</p></div>
       <div><b>LTCAT para o eSocial (S-2240)</b><p>Exposição biológica entra no eSocial e na aposentadoria especial. Errar o enquadramento gera passivo previdenciário.</p></div>
     </div>
@@ -115,13 +117,13 @@ footer b{color:var(--text)}
 
   <section>
     <h2>Como a Soteria resolve</h2>
-    <div class="como-box"><p>Avaliamos sala a sala e função a função: quem tem exposição real, quem não tem. Laudo com ART discriminando cada função — o documento que segura uma fiscalização e uma reclamatória trabalhista. No painel online, os vencimentos e a checagem do eSocial ficam visíveis pra você e pro seu contador.</p></div>
+    <div class="como-box"><p>Avaliamos sala a sala e função a função: quem tem exposição real, quem não tem. Laudo com ART discriminando cada função — sua prova técnica robusta em fiscalização e em juízo. No painel online, os vencimentos e a checagem do eSocial ficam visíveis pra você e pro seu contador.</p></div>
   </section>
 
   <section class="faq">
     <h2>Perguntas frequentes</h2>
     <dl>
-      <div class="item"><dt>A recepcionista da clínica tem insalubridade?</dt><dd>Em regra, não — se ela não tem contato com pacientes em procedimentos nem com material biológico. Mas é o laudo técnico que documenta isso; sem laudo, uma reclamatória trabalhista tende a presumir a exposição.</dd></div>
+      <div class="item"><dt>A recepcionista da clínica tem insalubridade?</dt><dd>Em regra, não — se ela não tem contato com pacientes em procedimentos nem com material biológico. Mas é o laudo técnico que documenta isso; sem laudo, a empresa chega à perícia judicial sem nenhuma prova técnica própria.</dd></div>
       <div class="item"><dt>Clínica de estética entra nas mesmas regras?</dt><dd>Se há procedimento invasivo (agulhas, microagulhamento), há risco biológico e a NR-32 orienta os cuidados. Cada caso exige avaliação — é exatamente o que o diagnóstico inicial responde.</dd></div>
       <div class="item"><dt>O que é exigido pro eSocial da clínica?</dt><dd>Os eventos S-2220 (saúde ocupacional) e S-2240 (condições de exposição) precisam bater com o PCMSO e o LTCAT. Inconsistência entre eles é o que gera notificação.</dd></div>
     </dl>

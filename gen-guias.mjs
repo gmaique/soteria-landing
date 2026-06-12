@@ -22,7 +22,7 @@ const PAGINAS = [
     desc: "Restaurante com funcionário CLT precisa de PGR e ordens de serviço — e a cozinha tem calor, cortes e piso escorregadio. Veja o que a lei exige e quanto custa regularizar.",
     intro: "Cozinha profissional tem fogo, óleo quente, faca, piso molhado e correria. Não é à toa que restaurantes estão entre os negócios que mais geram afastamento por acidente — e entre os que mais levam multa por não ter a documentação básica de segurança do trabalho.",
     exige: [
-      ["PGR — Gerenciamento de Riscos (NR-1)", "Obrigatório com funcionário CLT. Mapeia os riscos da cozinha e do salão (queimaduras, cortes, quedas) e define as medidas de controle."],
+      ["PGR — Programa de Gerenciamento de Riscos (NR-1)", "Obrigatório com funcionário CLT. Mapeia os riscos da cozinha e do salão (queimaduras, cortes, quedas) e define as medidas de controle."],
       ["Ordens de Serviço (NR-1)", "Cada função — cozinheiro, auxiliar, garçom — precisa receber por escrito os riscos do trabalho e como se proteger."],
       ["PCMSO e ASOs (NR-7)", "Exames admissional, periódico e demissional, coordenados por médico do trabalho. Sem ASO válido, o eSocial acusa."],
       ["Avaliação de calor e agentes (NR-15)", "Cozinhas com forno e fogão industrial podem caracterizar insalubridade por calor — só medição no local responde."],
@@ -43,7 +43,7 @@ const PAGINAS = [
     titulo: "Segurança do Trabalho para Construção Civil em Curitiba | PGR, NR-18 e laudos",
     h1: "Segurança do trabalho para <span class='hl'>construção civil</span> em Curitiba",
     desc: "Obra é grau de risco 3-4: PGR por canteiro, NR-18, NR-35 e laudos. Veja o que a fiscalização cobra de construtoras e como regularizar com engenheiro e ART.",
-    intro: "A construção civil é o setor mais fiscalizado do Paraná — e o que mais registra acidentes graves. Trabalho em altura, máquinas, escavações e eletricidade convivem no mesmo canteiro, e a documentação precisa acompanhar cada obra, não só a empresa.",
+    intro: "A construção civil está entre os setores mais fiscalizados do Paraná — e entre os que mais registram acidentes graves. Trabalho em altura, máquinas, escavações e eletricidade convivem no mesmo canteiro, e a documentação precisa acompanhar cada obra, não só a empresa.",
     exige: [
       ["PGR com as condições de cada canteiro (NR-1 + NR-18)", "O gerenciamento de risco precisa refletir a obra real: fases, máquinas, alturas. Obra nova = revisão do PGR."],
       ["Treinamentos de NR válidos", "NR-35 (altura, reciclagem a cada 2 anos), NR-18, NR-12 (máquinas), NR-10 (elétrica) — por trabalhador, com certificado."],
@@ -54,7 +54,7 @@ const PAGINAS = [
     como: "Atendemos por obra: visita ao canteiro, medições (ruído, poeira), PGR e laudos com ART, e o painel online mostra o que vence por funcionário — NR-35 de cada um, ASOs, tudo num lugar. Construtora com 3 canteiros enxerga os 3 separados.",
     faq: [
       ["Cada obra precisa do seu próprio PGR?", "O PGR é da empresa, mas precisa contemplar as condições reais de cada canteiro — na prática, obra nova exige atualização do inventário de riscos e do plano de ação. PGR genérico de prateleira não passa em fiscalização."],
-      ["Subcontratados (empreiteiros) são responsabilidade minha?", "A contratante responde solidariamente pelas condições de segurança no canteiro. Exigir e conferir a documentação dos terceiros faz parte do seu gerenciamento de risco."],
+      ["Subcontratados (empreiteiros) são responsabilidade minha?", "A contratante pode ser responsabilizada — inclusive solidariamente, em caso de acidente — pelas condições de segurança no canteiro. Exigir e conferir a documentação dos terceiros faz parte do seu gerenciamento de risco."],
       ["Pedreiro tem insalubridade?", "Depende da exposição medida: cimento (álcalis), poeira, ruído. Não é automático por função — é a avaliação técnica no local que caracteriza, e isso protege a empresa de pagar adicional indevido."],
     ],
     rel: ["o-que-e-pgr", "laudo-periculosidade-curitiba", "ltcat-curitiba"],
@@ -69,14 +69,14 @@ const PAGINAS = [
     intro: "Clínicas, consultórios e laboratórios têm uma armadilha silenciosa: parecem escritórios, mas são grau de risco 3 por causa do risco biológico. A recepcionista talvez não tenha adicional — a técnica de enfermagem que aplica injetável provavelmente tem. Quem define é o laudo, não o achismo.",
     exige: [
       ["PGR com risco biológico (NR-1 + NR-32)", "Contato com pacientes, perfurocortantes e material biológico precisam estar mapeados, com plano de ação."],
-      ["Laudo de insalubridade (NR-15, Anexo 14)", "Define função a função quem tem exposição a agentes biológicos — e em que grau (10%, 20% ou 40%)."],
+      ["Laudo de insalubridade (NR-15, Anexo 14)", "Define função a função quem tem exposição a agentes biológicos — e em que grau: médio (20%) ou máximo (40%), conforme o Anexo 14."],
       ["PCMSO com protocolos da NR-32", "Vacinação (hepatite B), condutas pós-acidente com perfurocortante, exames específicos — coordenado por médico do trabalho."],
       ["LTCAT para o eSocial (S-2240)", "Exposição biológica entra no eSocial e na aposentadoria especial. Errar o enquadramento gera passivo previdenciário."],
     ],
     riscos: ["Acidente com perfurocortante (agulhas)", "Exposição a agentes biológicos", "Produtos de limpeza e esterilização (químicos)", "Posturas e movimentos repetitivos na recepção", "Radiação ionizante (se houver raio-X)"],
-    como: "Avaliamos sala a sala e função a função: quem tem exposição real, quem não tem. Laudo com ART discriminando cada função — o documento que segura uma fiscalização e uma reclamatória trabalhista. No painel online, os vencimentos e a checagem do eSocial ficam visíveis pra você e pro seu contador.",
+    como: "Avaliamos sala a sala e função a função: quem tem exposição real, quem não tem. Laudo com ART discriminando cada função — sua prova técnica robusta em fiscalização e em juízo. No painel online, os vencimentos e a checagem do eSocial ficam visíveis pra você e pro seu contador.",
     faq: [
-      ["A recepcionista da clínica tem insalubridade?", "Em regra, não — se ela não tem contato com pacientes em procedimentos nem com material biológico. Mas é o laudo técnico que documenta isso; sem laudo, uma reclamatória trabalhista tende a presumir a exposição."],
+      ["A recepcionista da clínica tem insalubridade?", "Em regra, não — se ela não tem contato com pacientes em procedimentos nem com material biológico. Mas é o laudo técnico que documenta isso; sem laudo, a empresa chega à perícia judicial sem nenhuma prova técnica própria."],
       ["Clínica de estética entra nas mesmas regras?", "Se há procedimento invasivo (agulhas, microagulhamento), há risco biológico e a NR-32 orienta os cuidados. Cada caso exige avaliação — é exatamente o que o diagnóstico inicial responde."],
       ["O que é exigido pro eSocial da clínica?", "Os eventos S-2220 (saúde ocupacional) e S-2240 (condições de exposição) precisam bater com o PCMSO e o LTCAT. Inconsistência entre eles é o que gera notificação."],
     ],
@@ -99,7 +99,7 @@ const PAGINAS = [
     riscos: ["Ruído contínuo acima do limite (compressor, lixadeira)", "Solventes e derivados de petróleo na pele e no ar", "Fumos metálicos de solda", "Veículo em elevação (esmagamento)", "Incêndio (inflamáveis)"],
     como: "Medimos ruído e avaliamos os químicos no seu ambiente real, com dosímetro e metodologia da Fundacentro. O laudo com ART diz exatamente quem recebe o quê — e o PGR organiza as proteções. No painel online você acompanha EPIs e vencimentos por mecânico.",
     faq: [
-      ["Todo mecânico tem direito a insalubridade?", "Não automaticamente. Depende da exposição medida: ruído acima de 85 dB(A) na jornada, contato com hidrocarbonetos sem proteção adequada. O laudo evita os dois erros caros: pagar sem dever ou ser condenado a pagar retroativo em dobro."],
+      ["Todo mecânico tem direito a insalubridade?", "Não automaticamente. Depende da exposição medida: ruído acima de 85 dB(A) na jornada, contato com hidrocarbonetos sem proteção adequada. O laudo evita os dois erros caros: pagar sem dever ou ser condenado a pagar retroativo com reflexos (13º, férias, FGTS) e juros."],
       ["EPI elimina o adicional de insalubridade?", "Pode neutralizar, se comprovadamente eficaz e com uso fiscalizado (Súmula 80 do TST) — mas pra ruído o STF entende que o EPI nem sempre afasta o direito. É análise técnica caso a caso, função do laudo."],
       ["Oficina com 2 funcionários precisa disso tudo?", "Precisa de PGR, ASOs e EPIs documentados desde o primeiro CLT. O custo de regularizar é uma fração de uma única condenação por insalubridade não paga."],
     ],
@@ -122,7 +122,7 @@ const PAGINAS = [
     riscos: ["Acidente de trânsito (principal causa de óbito ocupacional)", "Carga e descarga manual (coluna, esmagamento)", "Inflamáveis e produtos perigosos", "Jornadas longas e fadiga", "Assalto e violência externa"],
     como: "Organizamos a casa por motorista: o painel online mostra o toxicológico de cada um com semáforo de vencimento (a dor número 1 de quem tem frota), os ASOs, e os documentos da empresa. Os laudos saem com medição e ART; a checagem do eSocial avisa antes de o governo notificar.",
     faq: [
-      ["Motorista de caminhão tem periculosidade?", "Tem quando transporta inflamáveis acima dos limites de isenção da NR-16 ou acompanha abastecimento. Não é todo motorista — o enquadramento errado custa 30% da folha pra quem paga sem dever."],
+      ["Motorista de caminhão tem periculosidade?", "Tem quando transporta inflamáveis acima dos limites de isenção da NR-16 ou acompanha abastecimento. Não é todo motorista — o enquadramento errado custa 30% sobre o salário-base de cada motorista pra quem paga sem dever."],
       ["Como controlo o toxicológico de 40 motoristas com datas diferentes?", "É exatamente o que o nosso painel resolve: cada motorista com a data do seu exame e alerta antes de vencer. Sem planilha, sem surpresa."],
       ["Agregado/terceiro também é responsabilidade minha?", "Motorista agregado PJ não entra no seu eSocial, mas a tomadora mantém deveres de segurança na operação (carga/descarga nas suas instalações, por exemplo). Vale mapear no PGR."],
     ],
@@ -143,7 +143,7 @@ const PAGINAS = [
       ["CIPA (NR-5) e treinamentos", "Dimensionada pelo quadro; treinamentos NR-12, NR-11 (empilhadeira), NR-33/35 quando aplicável."],
     ],
     riscos: ["Máquinas e prensas sem proteção (NR-12)", "Ruído industrial contínuo", "Químicos no processo (solventes, ácidos, tintas)", "Empilhadeiras e movimentação de carga", "Espaços confinados e trabalho a quente"],
-    como: "Fazemos a avaliação completa de planta: medições com equipamento calibrado, laudos com ART, PGR com plano de ação executável e o painel online pra acompanhar vencimento por funcionário — treinamento NR-12 do operador, ASO do soldador, tudo visível. Atendimento técnico contínuo pra grau de risco alto é o nosso formato de contrato mensal.",
+    como: "Fazemos a avaliação completa de planta: medições com equipamento calibrado, laudos com ART, PGR com plano de ação executável e o painel online pra acompanhar vencimento por funcionário — treinamento NR-12 do operador, ASO do soldador, tudo visível. Pra grau de risco alto, oferecemos atendimento técnico contínuo em contrato mensal.",
     faq: [
       ["Qual a diferença entre LTCAT e laudo de insalubridade?", "O LTCAT é previdenciário: documenta exposição pra aposentadoria especial e eSocial. O laudo de insalubridade é trabalhista: define adicional salarial pela NR-15. As medições se aproveitam, mas são documentos com fins e consequências diferentes."],
       ["Minha indústria precisa de engenheiro de segurança contratado (SESMT)?", "Depende do dimensionamento da NR-4 (grau de risco × nº de funcionários). Muitas indústrias médias ficam abaixo da exigência de SESMT próprio — e cobrem a responsabilidade técnica com consultoria contínua de engenheiro externo, que é o que oferecemos."],
@@ -205,7 +205,7 @@ const PAGINAS = [
     nome: "PGR (NR-1)",
     titulo: "O que é PGR e quem precisa ter | Soteria Segurança do Trabalho Curitiba",
     h1: "O que é o <span class='hl'>PGR</span> — e a sua empresa precisa de um?",
-    desc: "PGR é o Gerenciamento de Riscos Ocupacionais da NR-1, obrigatório para empresas com CLT. Entenda o que é, quem está dispensado, validade e preço em Curitiba.",
+    desc: "PGR é o documento que materializa o Gerenciamento de Riscos (GRO) da NR-1, obrigatório para empresas com CLT. Entenda quem está dispensado, validade e preço em Curitiba.",
     intro: "O PGR (Programa de Gerenciamento de Riscos) substituiu o antigo PPRA em 2022 e é o documento-mãe da segurança do trabalho: o inventário dos riscos da sua operação e o plano de ação pra controlá-los. É a primeira coisa que fiscal, juiz e eSocial perguntam.",
     secExige: "O essencial em 4 pontos",
     exige: [
@@ -230,7 +230,7 @@ const PAGINAS = [
     nome: "Laudo de insalubridade",
     titulo: "Laudo de Insalubridade em Curitiba | medição NR-15 com ART",
     h1: "Laudo de <span class='hl'>insalubridade</span> em Curitiba — medido no local, com ART",
-    desc: "Laudo de insalubridade NR-15 define o adicional de 10%, 20% ou 40% — função a função, com medição. Perícia privativa de engenheiro ou médico do trabalho (CLT art. 195).",
+    desc: "Laudo de insalubridade NR-15 define o adicional de 10%, 20% ou 40% — função a função, com medição. Privativo de engenheiro de segurança ou médico do trabalho (CLT art. 195).",
     intro: "O adicional de insalubridade não é opinião: é medição. Ruído, calor, químicos e agentes biológicos têm limites definidos na NR-15, e só a avaliação no local de trabalho — com equipamento calibrado e metodologia da Fundacentro — diz quem tem direito a 10%, 20% ou 40% do salário mínimo.",
     secExige: "O que o laudo responde",
     exige: [
@@ -266,7 +266,7 @@ const PAGINAS = [
     ],
     secRiscos: "Quando você precisa de um",
     riscos: ["Tem tanque, gerador ou estoque de inflamáveis no prédio", "Eletricista próprio ou manutenção em painéis", "Motoboy CLT na operação", "Reclamatória pedindo os 30%", "Dúvida se a portaria/vigia tem direito"],
-    como: "Visitamos a operação, levantamos quantidades e localizações de inflamáveis, delimitamos a área de risco em planta e entregamos o laudo com ART dizendo função a função quem está enquadrado. É o documento que define a folha — e que segura a perícia judicial.",
+    como: "Visitamos a operação, levantamos quantidades e localizações de inflamáveis, delimitamos a área de risco em planta e entregamos o laudo com ART dizendo função a função quem está enquadrado. É o documento que define a folha — sua prova técnica robusta na perícia judicial.",
     faq: [
       ["Posso acumular insalubridade e periculosidade?", "Não — a CLT manda optar pelo mais favorável quando os dois incidem. O laudo conjunto avalia ambos e aponta o cenário correto de pagamento."],
       ["Gerador no subsolo gera periculosidade pra todo o prédio?", "Não necessariamente. Depende da quantidade de combustível e de quem efetivamente trabalha/circula na área de risco delimitada. É exatamente o que a avaliação responde — antes que um processo responda por você."],
@@ -324,12 +324,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:
 a{color:inherit;text-decoration:none}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 header .wrap{max-width:1180px}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:12px;flex:none}
-.brand .mark{width:38px;height:38px;display:grid;place-items:center}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand>div{min-width:0}
+.brand .mark{width:38px;height:38px;flex:none;display:grid;place-items:center}
 .brand b{font-weight:600;font-size:.98rem;display:block;line-height:1.15;white-space:nowrap}
-.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.btn{font-family:var(--body);font-size:.875rem;height:40px;padding:0 16px;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.11s;letter-spacing:.01em}
+.brand span{font-family:var(--mono);font-size:.62rem;color:var(--helper);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;display:block;overflow:hidden;text-overflow:ellipsis}
+.btn{font-family:var(--body);font-size:.875rem;height:40px;padding:0 16px;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.11s;letter-spacing:.01em;white-space:nowrap;flex-shrink:0}
 .btn-wa{background:var(--accent);color:#fff;font-weight:500}.btn-wa:hover{background:var(--accent-hover)}
 .btn-ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}.btn-ghost:hover{background:var(--accent);color:#fff}
 .hero{padding:64px 0 36px;border-bottom:1px solid var(--border)}
@@ -365,12 +366,13 @@ footer{border-top:1px solid var(--border);padding:32px 0;font-size:.78rem;color:
 footer b{color:var(--text)}
 .disclaimer{max-width:760px;margin:14px auto 0;font-size:.68rem;line-height:1.7;color:var(--helper)}
 /* índice */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:20px}
-.cards a{background:#fff;padding:22px;transition:background .11s;display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:20px}
+.cards a{background:#fff;border:1px solid var(--border);padding:22px;transition:background .11s,border-color .11s;display:block}
+.cards a:hover{border-color:var(--accent)}
 .cards a:hover{background:#fafafa}
 .cards b{font-weight:500;display:block}
 .cards span{color:var(--helper);font-size:.8rem;font-family:var(--mono)}
-@media(max-width:700px){.nav{height:58px}.brand .mark{width:32px;height:32px}.brand span{font-size:.54rem}}
+@media(max-width:700px){.nav{height:58px}.brand .mark{width:32px;height:32px}.brand span{font-size:.54rem}.nav .btn{font-size:.78rem;padding:0 12px;height:34px}}
 `;
 
 const footerHtml = (depth) => `<footer>
