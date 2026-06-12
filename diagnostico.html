@@ -199,6 +199,8 @@ footer b{color:var(--paper)}
           <input type="text" id="cNome" placeholder="Seu nome" required>
           <input type="text" id="cEmpresa" placeholder="Nome da empresa" required>
           <input type="tel" id="cZap" placeholder="Seu WhatsApp — (41) 9...." required>
+          <input type="email" id="cEmail" placeholder="E-mail (opcional) — pra receber o relatório">
+          <input type="text" id="cSite" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
           <button type="submit" class="btn btn-wa">Receber meu plano no WhatsApp →</button>
           <p style="font-size:.68rem;color:var(--muted);margin-top:4px">Usamos seus dados só pra este contato comercial (controladora: Soteria). <a href="privacidade.html" style="text-decoration:underline">Política de Privacidade</a>.</p>
         </form>
@@ -388,13 +390,46 @@ const app = {
   reset(){ this.show("s-abertura"); window.scrollTo({ top: 0 }); },
 };
 
-/* captura → WhatsApp */
+/* captura → grava o lead no CRM da Soteria + abre o WhatsApp */
+const API_LEAD = "https://app.soteriasst.com.br/api/public/lead";
+/* se chegou por link de parceiro (?ref=CODIGO), guarda por 90 dias */
+try {
+  const _r = new URLSearchParams(location.search).get("ref");
+  if (_r) localStorage.setItem("soteria_ref", JSON.stringify({ ref: _r, t: Date.now() }));
+} catch (e) {}
+function refParceiro(){
+  try {
+    const o = JSON.parse(localStorage.getItem("soteria_ref"));
+    return o && Date.now() - o.t < 90 * 864e5 ? o.ref : null;
+  } catch { return null; }
+}
 document.getElementById("capForm").addEventListener("submit", function(e){
   e.preventDefault();
   const nome = document.getElementById("cNome").value.trim();
   const empresa = document.getElementById("cEmpresa").value.trim();
+  const zap = document.getElementById("cZap").value.trim();
+  const email = document.getElementById("cEmail").value.trim();
   const pend = app._faltas.sort((a,b) => b.peso - a.peso).slice(0,3)
     .map(p => p.titulo.replace("?","")).join("; ") || "nenhuma crítica";
+
+  // grava no CRM mesmo que a pessoa não conclua no WhatsApp (best-effort, não bloqueia)
+  try {
+    fetch(API_LEAD, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        nome, empresa, contato: zap, email,
+        origem: "diagnostico",
+        nota: app._nota, faixa: app._faixa,
+        pendencias: pend,
+        caracterizacao: `${app.carac.C1 || "-"} func · ${app.carac.C2 || "-"} · exposição: ${app.carac.C3 || "-"}`,
+        ref: refParceiro(),
+        website: document.getElementById("cSite").value, // honeypot
+      }),
+      keepalive: true,
+    }).catch(function(){});
+  } catch (err) {}
+
   const msg =
 `*Diagnóstico de Conformidade SST*
 • Nome: ${nome} | Empresa: ${empresa}
